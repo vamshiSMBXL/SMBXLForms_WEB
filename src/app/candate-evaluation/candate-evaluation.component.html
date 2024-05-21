@@ -1,0 +1,371 @@
+<div *ngIf="!preview">
+<form  id="evaluation-form" [formGroup]="CandateEvaluateForm">
+    <div class="main">
+        <div class="evaluation-form">
+            <h1 class="text-center mt-5">CANDIDATE EVALUATION FORM</h1>
+            <div class="techEvaluation-form">
+                    <div class="personal-data  mt-3">
+                        <div class="form-group">
+                            <label class="m-0" for="candidateName">Candidate Name :</label>
+                            <input type="text" id="candidateName" name="candidateName" formControlName="candidateName">
+                        </div>
+                        <div class="form-group date">
+                            <label class="m-0" for="date">Date:</label>
+                            <input type="date" id="date" name="presentDate" formControlName="presentDate">
+                        </div>
+                        <div class="form-group">
+                            <label class="m-0" for="interviewerName">Interviewer's Name :</label>
+                            <input type="text" id="interviewerName" name="InterviewerName" formControlName="InterviewerName">
+                        </div>
+                    </div>
+                    <h6 class="h6">
+                        Please rate the candidate on the technical skills evaluated on a scale of 1 to 5 (1 - Poor and 5
+                        – Excellent)
+                    </h6>
+                    <div class="candidate-rating">
+                        <div class="table-responsive">
+                            <table class="rating-table">
+
+                                <tr>
+                                    <th class="no-border-bottom">S.No.</th>
+                                    <th class="no-border-bottom">Skills</th>
+                                    <th colspan="2">Rating (1 to 5)</th>
+                                </tr>
+                                <tr>
+                                    <th class="no-border-top"></th>
+                                    <th class="no-border-top"></th>
+                                    <th> Interviewer 1</th>
+                                    <th> Interviewer 2</th>
+                                </tr>
+                                <tr>
+                                    <td>1.</td>
+                                    <td> Communication Skills</td>
+                                    <td ><input type="number" id="CommunicationSkills" name="CommunicationSkillone" formControlName="CommunicationSkillone" (click)="CalculationOne()"></td>
+                                    <td><input type="number" id="CommunicationSkills" name="CommunicationSkilltwo" formControlName="CommunicationSkilltwo" (click)="CalculationTwo()"></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td> Technical Knowledge</td>
+                                    <td><input type="number" id="TechnicalKnowledge" name="TechnicalKnowledgeone" formControlName="TechnicalKnowledgeone" (click)="CalculationOne()"></td>
+                                    <td><input type="number" id="TechnicalKnowledge" name="TechnicalKnowledgetwo" formControlName="TechnicalKnowledgetwo" (click)="CalculationTwo()"></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>Experience relevant to the requirement
+                                        <br>
+                                        1. Similar industry experience
+                                        <br>
+                                        2. Alignment with our business
+                                    </td>
+                                    <td><tr><input type="number" id="ExperienceRequirement" name="SimilarIndustryExperienceone" formControlName="SimilarIndustryExperienceone" (click)="CalculationOne()"></tr><tr><input type="number" id="ExperienceRequirement" name="AlignmentWithOurBussinessone" formControlName="AlignmentWithOurBussinessone" (click)="CalculationOne()"/></tr></td>
+                                    <td><tr><input type="number" id="ExperienceRequirement" name="SimilarIndustryExperiencetwo" formControlName="SimilarIndustryExperiencetwo" (click)="CalculationTwo()"></tr><tr><input type="number" id="ExperienceRequirement" name="AlignmentWithOurBussinesstwo" formControlName="AlignmentWithOurBussinesstwo" (click)="CalculationTwo()"></tr></td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>Organizational / Cultural fit
+                                        <br>
+                                        1. Attitude
+                                        <br>
+                                        2. Presentability
+                                        <br>
+                                        3. Team Player
+                                        <br>
+                                        4. Problem Solving skills
+                                        <br>
+                                        5. Leadership
+                                        <br>
+                                        6. Innovative
+                                        <br>
+                                    </td>
+                                    <td>
+                                        <tr><input type="number" id="Attitude" name="Attitudeone" formControlName="Attitudeone" (click)="CalculationOne()"></tr>
+                                        <tr><input type="number" id="Presentability" name="Presentabilityone" formControlName="Presentabilityone" (click)="CalculationOne()"></tr>
+                                        <tr><input type="number" id="TeamPlayer" name="TeamPlayerone" formControlName="TeamPlayerone" (click)="CalculationOne()"></tr>
+                                        <tr><input type="number" id="ProblemSolvingSkills" name="ProblemSolvingSkillsone" formControlName="ProblemSolvingSkillsone" (click)="CalculationOne()"></tr>
+                                        <tr><input type="number" id="LeaderShip" name="LeaderShipone" formControlName="LeaderShipone" (click)="CalculationOne()"></tr>
+                                        <tr><input type="number" id="Innovative" name="Innovativeone" formControlName="Innovativeone" (click)="CalculationOne()"></tr>
+                                    </td>  
+                                    <td>
+                                        <tr><input type="number" id="Attitude" name="Attitudetwo" formControlName="Attitudetwo"(click)="CalculationTwo()"></tr>
+                                        <tr><input type="number" id="Presentability" name="Presentabilitytwo" formControlName="Presentabilitytwo" (click)="CalculationTwo()"></tr>
+                                        <tr><input type="number" id="TeamPlayer" name="TeamPlayertwo" formControlName="TeamPlayertwo" (click)="CalculationTwo()"></tr>
+                                        <tr><input type="number" id="ProblemSolvingSkills" name="ProblemSolvingSkillstwo" formControlName="ProblemSolvingSkillstwo" (click)="CalculationTwo()"></tr>
+                                        <tr><input type="number" id="LeaderShip" name="LeaderShiptwo" formControlName="LeaderShiptwo" (click)="CalculationTwo()"></tr>
+                                        <tr><input type="number" id="Innovative" name="Innovativetwo" formControlName="Innovativetwo" (click)="CalculationTwo()"></tr>
+                                    </td>
+                                 </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> Overall Evaluation</td>
+                                    <td>{{OverallEavulationone}}</td>
+                                    <td>{{OverallEavulationtwo}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="textarea-content mt-3">
+                            <h6 class="h6 m-0 text-decoration-underline">Areas of Improvement / Concerns:</h6>
+                            <textarea class="mt-3 " name="AreaOfImprovement"
+                                style="width: 100%;border:none" formControlName="AreaOfImprovement"></textarea>
+                        </div>
+                        <div class="textarea-content mt-3">
+                            <h6 class="h6 m-0">Please record any other feedback or observation on the candidate:</h6>
+                            <textarea class="mt-3 " name="feedbackObservation"
+                                style="width: 100%;border:none" formControlName="feedbackObservation"></textarea>
+                            <div class="rating-div">
+                                <h4>Rating</h4>
+                                <div class="form-group d-flex" style="gap:20px;">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rating" id="excellent1" value="1" formControlName="Rating">
+                                        <label class="form-check-label" for="excellent1">
+                                            Excellent
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rating" id="verygood1" value="2" formControlName="Rating">
+                                        <label class="form-check-label" for="verygood1">
+                                            Very Good
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rating" id="good1" value="3" formControlName="Rating">
+                                        <label class="form-check-label" for="good1">
+                                            Good
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rating" id="average1" value="4" formControlName="Rating">
+                                        <label class="form-check-label" for="average1">
+                                            Average
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rating" id="belowaverage1" value="5" formControlName="Rating"    >
+                                        <label class="form-check-label" for="belowaverage1">
+                                            Below Average
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category">
+                                <h4 class="mt-3 h4">Interview Result</h4>
+                                <div class="form-group d-flex" style="gap:20px;">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="CandidateStatues" id="Select" value="1" formControlName="CandidateStatues">
+                                        <label class="form-check-label" for="select">
+                                            Select
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="CandidateStatues" id="Reject" value="2" formControlName="CandidateStatues">
+                                        <label class="form-check-label" for="rejected">
+                                            Reject
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="CandidateStatues" id="Hold" value="3" formControlName="CandidateStatues">
+                                        <label class="form-check-label" for="hold">
+                                            Hold
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="dateAndSignature d-flex justify-content-between mt-3">
+                <h6 class="h6">Signature of the Interviewer : <input type="text" formControlName="signature" name="signature"></h6>
+                <h6 class="h6">Date : <input type="date" formControlName="date" name="date"></h6>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="primary_btn " (click)="ratingfunction()">Preview</button>   
+</form>
+</div>
+
+
+
+<!-- Preview -->
+    <div *ngIf="preview" class="main">
+        <div class="evaluation-form">
+            <h1 class="text-center mt-5">CANDIDATE EVALUATION FORM</h1>
+            <div class="techEvaluation-form">
+                <form id="evaluation-form" method="" action="">
+                    <div class="personal-data  mt-3">
+                        <div class="form-group">
+                            <label class="m-0" for="candidateName"> Candidate Name :</label>
+                            <input type="text" id="candidateName" name="candidateName" value={{this.CandateEvaluateForm.value.candidateName}} disabled>
+                        </div>
+                        <div class="form-group date">
+                            <label class="m-0" for="date">Date:</label>
+                            <input type="date" id="date" name="date" value={{this.CandateEvaluateForm.value.presentDate}} disabled>
+                        </div>
+                        <div class="form-group">
+                            <label class="m-0" for="interviewerName">Interviewer's Name :</label>
+                            <input type="text" id="interviewerName" name="interviewerName" value={{this.CandateEvaluateForm.value.InterviewerName}} disabled>
+                        </div>
+                    </div>
+                    <h6 class="h6">
+                        Please rate the candidate on the technical skills evaluated on a scale of 1 to 5 (1 - Poor and 5
+                        – Excellent)
+                    </h6>
+                    <div class="candidate-rating">
+                        <div class="table-responsive">
+                            <table class="rating-table">
+
+                                <tr>
+                                    <th class="no-border-bottom">S.No.</th>
+                                    <th class="no-border-bottom">Skills</th>
+                                    <th colspan="2">Rating (1 to 5)</th>
+                                </tr>
+                                <tr>
+                                    <th class="no-border-top"></th>
+                                    <th class="no-border-top"></th>
+                                    <th> Interviewer 1</th>
+                                    <th> Interviewer 2</th>
+                                </tr>
+                                <tr>
+                                    <td>1.</td>
+                                    <td> Communication Skills</td>
+                                    <td ><input type = "text" value={{this.CandateEvaluateForm.value.CommunicationSkillone}} disabled></td>
+                                    <td><input type = "text" value={{this.CandateEvaluateForm.value.CommunicationSkilltwo}} disabled></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td> Technical Knowledge</td>
+                                    <td><input type = "text" value={{this.CandateEvaluateForm.value.TechnicalKnowledgeone}} disabled></td>
+                                    <td><input type = "text" value={{this.CandateEvaluateForm.value.TechnicalKnowledgetwo}} disabled></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>Experience relevant to the requirement
+                                        <br>
+                                        1. Similar industry experience
+                                        <br>
+                                        2. Alignment with our business
+                                    </td>
+                                    <td><tr><input type = "text" value={{this.CandateEvaluateForm.value.SimilarIndustryExperienceone}} disabled></tr><tr><input value={{this.CandateEvaluateForm.value.AlignmentWithOurBussinessone}} disabled></tr></td>
+                                    <td><tr><input type = "text" value={{this.CandateEvaluateForm.value.SimilarIndustryExperiencetwo}} disabled></tr><tr><input value={{this.CandateEvaluateForm.value.AlignmentWithOurBussinesstwo}} disabled></tr></td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>Organizational / Cultural fit
+                                        <br>
+                                        1. Attitude
+                                        <br>
+                                        2. Presentability
+                                        <br>
+                                        3. Team Player
+                                        <br>
+                                        4. Problem Solving skills
+                                        <br>
+                                        5. Leadership
+                                        <br>
+                                        6. Innovative
+                                        <br>
+                                    </td>
+                                    <td>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.Attitudeone}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.Presentabilityone}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.TeamPlayerone}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.ProblemSolvingSkillsone}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.LeaderShipone}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.Innovativeone}} disabled></tr>
+                                    </td>
+                                    <td>  
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.Attitudetwo}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.Presentabilitytwo}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.TeamPlayertwo}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.ProblemSolvingSkillstwo}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.LeaderShiptwo}} disabled></tr>
+                                        <tr><input type = "text" value={{this.CandateEvaluateForm.value.Innovativetwo}} disabled></tr></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> Overall Evaluation</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="textarea-content mt-3">
+                            <h6 class="h6 m-0 text-decoration-underline">Areas of Improvement / Concerns:</h6>
+                            <textarea class="mt-3 " name="areasOfImprovement"
+                                style="width: 100%;border:none" value={{this.CandateEvaluateForm.value.AreaOfImprovement}} readonly ></textarea>
+                        </div>
+                        <div class="textarea-content mt-3">
+                            <h6 class="h6 m-0">Please record any other feedback or observation on the candidate:</h6>
+                            <textarea class="mt-3 " name="areasOfImprovement"
+                                style="width: 100%;border:none" value={{this.CandateEvaluateForm.value.feedbackObservation}} readonly ></textarea>
+                            <div class="rating-div">
+                                <h4>Rating</h4>
+                                <div class="form-group d-flex" style="gap:20px;">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="rating" id="excellent1" value="1" [(ngModel)]="selectedRating" disabled>
+                                      <label class="form-check-label" for="excellent1">
+                                        Excellent
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="rating" id="verygood1" value="2" [(ngModel)]="selectedRating" disabled>
+                                      <label class="form-check-label" for="verygood1">
+                                        Very Good
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="rating" id="good1" value="3" [(ngModel)]="selectedRating" disabled>
+                                      <label class="form-check-label" for="good1">
+                                        Good
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="rating" id="average1" value="4" [(ngModel)]="selectedRating" disabled>
+                                      <label class="form-check-label" for="average1">
+                                        Average
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="rating" id="belowaverage1" value="5" [(ngModel)]="selectedRating" disabled>
+                                      <label class="form-check-label" for="belowaverage1">
+                                        Below Average
+                                      </label>
+                                    </div>
+                                  </div>
+                                  
+                            </div>
+                            <div class="category">
+                                <h4 class="mt-3 h4">Interview Result</h4>
+                                <div class="form-group d-flex" style="gap:20px;">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="category" id="select" value="1" [(ngModel)]="interviewResult" disabled>
+                                        <label class="form-check-label" for="select">
+                                            Select
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="category" id="rejected" value="2" [(ngModel)]="interviewResult" disabled>
+                                        <label class="form-check-label" for="rejected">
+                                            Reject
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="category" id="hold" value="3" [(ngModel)]="interviewResult" disabled>
+                                        <label class="form-check-label" for="hold">
+                                            Hold
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="dateAndSignature d-flex justify-content-between mt-3">
+                <h6 class="h6">Signature of the Interviewer : <input type="text" value={{this.CandateEvaluateForm.value.signature}} disabled></h6>
+                <h6 class="h6">Date : <input type="text" value={{this.CandateEvaluateForm.value.date}} disabled></h6>
+            </div>
+        </div>
+        <button type="button" class="primary_btn" (click)="CandateEveluationsumbmit()">Submit</button>     
+        <button type="button" class="primary_btn" (click)="editfuction()">Edit</button>    
+    </div>
+    

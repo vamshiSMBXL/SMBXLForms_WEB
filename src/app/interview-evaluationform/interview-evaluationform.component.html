@@ -1,0 +1,678 @@
+<div *ngIf="!preview">
+  <form >
+    <div class="main">
+        <div class="evaluation-form">
+          <div class="techEvaluation-form">
+            <form id="evaluation-form" method="" action="" [formGroup]="InterviewEvaluation">
+              <div class="candidate-rating table-responsive">
+                <table class="main-table">
+                  <tr>
+                      <div class="table-responsive">
+                          <table class="evaluationtable">
+                              <tr>
+                              <th class="text-center text-uppercase" colspan="4">
+                                  Interview Evaluation Sheet
+                              </th>
+                              </tr>
+                              <tr>
+                              <th>Date : <input type="date" formControlName="date" name="date"/></th>
+                              <th></th>
+                              <th>Interviewed by : <input type="text" formControlName="interViewBy"/></th>
+                              <th></th>
+                              </tr>
+                              <tr>
+                              <th>
+                                  <div class="form-check">
+                                  <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      name="statues"
+                                      id="goodtohire"
+                                      value = 1
+                                      formControlName="statues"
+                                  />
+                                  <label class="form-check-label" for="goodtohire">
+                                      Good To Hire
+                                  </label>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="form-check">
+                                  <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      name="statues"
+                                      id="hold"
+                                      value = 2
+                                      formControlName="statues"
+                                  />
+                                  <label class="form-check-label" for="hold">
+                                      Hold For Consideration
+                                  </label>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="form-check">
+                                  <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      name="statues"
+                                      id="donothire"
+                                      value = 3
+                                      formControlName="statues"
+                                  />
+                                  <label class="form-check-label" for="donothire">
+                                      Do Not Hire
+                                  </label>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="form-check">
+                                  <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      name="statues"
+                                      id="anotherpos"
+                                      value = 4
+                                      formControlName="statues"
+                                  />
+                                  <label class="form-check-label" for="anotherpos">
+                                      Better Qualified For Another Position
+                                  </label>
+                                  </div>
+                              </th>
+                              </tr>
+                          </table>
+                      </div>
+                      <div class="table-responsive">
+                          <table class="candidate-details">
+                              <tr>
+                              <th class="text-center text-uppercase" colspan="4">
+                                  Details
+                              </th>
+                              </tr>
+                              <tr>
+                              <th >Candidate Name :</th>
+                              <th><input type="text" formControlName="candidateName"/></th>
+                              <th>Interviewer :</th>
+                              <th><input type="text" formControlName="interviewer"/></th>
+                              </tr>
+                              <tr>
+                              <th>Position/Job Title :</th>
+                              <th><input type="text" formControlName="position"/></th>
+                              <th>Department/Team :</th>
+                              <th><input type="text" formControlName="department"/></th>
+                              </tr>
+                          </table>
+                      </div>
+                      <div class="table-responsive">
+                          <table class="work-experience">
+                              <tr>
+                              <th rowspan="2">Prior Work Experience</th>
+                              <th>Total Work Experience</th>
+                              <td><input type="text" formControlName="totalWorkExperience"/></td>
+                              <td></td>
+                              </tr>
+                              <tr>
+                              <th>Relevant Experience</th>
+                              <td><input type="text" formControlName="relevantExperience"/></td>
+                              <td></td>
+                              </tr>
+                              <tr>
+                              <th rowspan="3">
+                                  Education background(Does the candidate have the
+                                  appropriate educational qualifications or training for
+                                  this position
+                              </th>
+                              <th>Academic Qualification</th>
+                              <td><input type="text" formControlName="academicQualifications"/></td>
+                              <td></td>
+                              </tr>
+                              <tr>
+                              <th>Courses/Certifications</th>
+                              <td><input type="text" formControlName="coursesAndCertifications"/></td>
+                              <td></td>
+                              </tr>
+                              <tr>
+                              <th>Training/Internship</th>
+                              <td><input type="text" formControlName="traniningAndInternship"/></td>
+                              <td></td>
+                              </tr>
+                          </table>
+                      </div>
+                      <div class="table-responsive" >
+                          <table class="communication-skills">
+                              <tr>
+                              <th colspan="3">
+                                  Lowest rating at 1 and highest rating at 5
+                              </th>
+                              <th>Ratings/Scores</th>
+                              </tr>
+                              <tr>
+                              <td rowspan="6">communication Skills</td>
+                              <td rowspan="2">Verbal Skills</td>
+                              <td>Written Skills</td>
+                              <td><input type="number" #writingskills  name="answerName"  (input)="getAnswerValues(1039,writingskills.value)" (input)="AverageScoreofCommunicatioskills(1039,writingskills.value)"/></td>
+                              <input type="hidden" name="questionId" value="1039"   />
+                              </tr>
+                              <tr>
+                              <td>Oral Skills</td>
+                              <td><input type="number" #oralskills  name="answerName" (input)="getAnswerValues(1040,oralskills.value)" (input)="AverageScoreofCommunicatioskills(1040,oralskills.value)"/></td>
+                              <input type="hidden" name="questionId" value="1040"  />  
+                              </tr>
+                              <tr>
+                              <td rowspan="3">Non-Verbal</td>
+                              <td>Body Language</td>
+                              <td><input type="number" #bodylanguage name="answerName" (input)="getAnswerValues(1041,bodylanguage.value)" (input)="AverageScoreofCommunicatioskills(1041,bodylanguage.value)"/></td>
+                              <input type="hidden" name="questionId" value="1041"  />  
+                              </tr>
+  
+                              <tr>
+                              <td>Presentable</td>
+                              <td><input type="number" #Presentable name="answerName" (input)="getAnswerValues(1042,Presentable.value)" (input)="AverageScoreofCommunicatioskills(1042,Presentable.value)"/></td>
+                              <input type="hidden" name="questionId" value="1042" />  
+                              </tr>
+                              <tr>
+                              <td>Discipline(Punctuality)</td>
+                              <td><input type="number" #discipline name="answerName" (input)="getAnswerValues(1043,discipline.value)" (input)="AverageScoreofCommunicatioskills(1043,discipline.value)"/></td>
+                              <input type="hidden" name="questionId" value="1043" />  
+                              </tr>
+                              <tr>
+                                <table>
+                                  <td colspan="2">Average Score</td>
+                                </table>
+                              <td><button (click)="AverageTotalcommunication(communicationAvg)">Total</button></td>
+                              <td><input type="text"/>{{commFinalTotal}}</td>
+                              </tr>
+                          </table>
+                      </div>
+  
+                      <div class="table-responsive">
+                          <table class="behavioural-skills">
+                              <tr>
+                              <td rowspan="9">Cultural/Behavioral Fit</td>
+                              <td colspan="2">Attitude</td>
+                              <td><input type="number" #attitude name="answerName" (input)="getAnswerValues(1044,attitude.value)"  (input)="AverageCulturalOrBehavioralFit(1044,attitude.value)"/></td>
+                              <input type="hidden" name="questionId" value="1044"/>
+                              </tr>
+                              <tr>
+                              <td colspan="2">Enthusiasm</td>
+                              <td><input type="number" #enthusiasm name="answerName" (input)="getAnswerValues(1045,enthusiasm.value)" (input)="AverageCulturalOrBehavioralFit(1045,enthusiasm.value)"/></td>
+                              <input type="hidden" name="questionId" value="1045"  />
+                              </tr>
+                              <tr>
+                              <td colspan="2">Team Player</td>
+                              <td><input type="number" #teamplayer name="answerName" (input)="getAnswerValues(1046,teamplayer.value)" (input)="AverageCulturalOrBehavioralFit(1046,teamplayer.value)"/></td>
+                              <input type="hidden" name="questionId" value="1046"  />
+                              </tr>
+                              <tr>
+                              <td colspan="2">Initiative</td>
+                              <td><input type="number" #initiative name="answerName" (input)="getAnswerValues(1047,initiative.value)" (input)="AverageCulturalOrBehavioralFit(1047,initiative.value)"/></td>
+                              <input type="hidden" name="questionId" value="1047" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">Time Management</td>
+                              <td><input type="number" #timemanagement name="answerName" (input)="getAnswerValues(1048,timemanagement.value)" (input)="AverageCulturalOrBehavioralFit(1048,timemanagement.value)"/></td>
+                              <input type="hidden" name="questionId" value="1048" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">Innovative/Creativity</td>
+                              <td><input type="number" #innvoative name="answerName" (input)="getAnswerValues(1049,innvoative.value)" (input)="AverageCulturalOrBehavioralFit(1049,innvoative.value)"/></td>
+                              <input type="hidden" name="questionId" value="1049" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Motivation(Is the candidate able to explain what
+                                  motivates them both at work and in Life)
+                              </td>
+                              <td><input type="number" #motivation name="answerName" (input)="getAnswerValues(1050,motivation.value)" (input)="AverageCulturalOrBehavioralFit(1050,motivation.value)"/></td>
+                              <input type="hidden" name="questionId" value="1050" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">Knowledge of Company</td>
+                              <td><input type="number" #knowledge name="answerName" (input)="getAnswerValues(1051,knowledge.value)" (input)="AverageCulturalOrBehavioralFit(1051,knowledge.value)"/></td>
+                              <input type="hidden" name="questionId" value="1051"  />
+                              </tr>
+  
+                              <tr>
+                                <table>
+                                  <td colspan="2">Average Score</td>
+                                </table>
+                              <td><button (click)="AverageTotalCulturalBehavioralFit(CulturalBehavioralFit)">Total</button></td>
+                              <td><input type="text"/>{{culterFinalTotal}}</td>
+                              </tr>
+                          </table>
+                      </div>
+  
+                      <div class="table-responsive">
+                          <table class="leadership-skills">
+                              <tr>
+                              <td rowspan="13">Leadership</td>
+                              <td colspan="2">Did the candidate manage a team</td>
+                              <td><input type="number" #leadership name="answerName" (input)="getAnswerValues(1052,leadership.value)" (input)="AvgLeadership(1052,leadership.value)"/></td>
+                              <input type="hidden" name="questionId" value="1052"  />
+                              </tr>
+                              <tr>
+                              <td colspan="2">If yes, whats the maximum team size</td>
+                              <td><input type="number" #maximumteamsize name="answerName" (input)="getAnswerValues(1053,maximumteamsize.value)" (input)="AvgLeadership(1053,maximumteamsize.value)"/></td>
+                              <input type="hidden" name="questionId" value="1053"/>
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Decision Making Skills(Did the candidate demonstrate an
+                                  ability to make timely and informed decisions)
+                              </td>
+                              <td><input type="number" #decisionmakingskills name="answerName" (input)="getAnswerValues(1054,decisionmakingskills.value)" (input)="AvgLeadership(1054,decisionmakingskills.value)"/></td>
+                              <input type="hidden" name="questionId" value="1054"/>
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Supervising/Delegation(Can the candidate effectively
+                                  direct the actions of others)
+                              </td>
+                              <td><input type="number" #supervising name="answerName" (input)="getAnswerValues(1055,supervising.value)" (input)="AvgLeadership(1055,supervising.value)"/></td>
+                              <input type="hidden" name="questionId" value="1055" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Performance Management(Does the candidate provide an
+                                  effective process for performance management)
+                              </td>
+                              <td><input type="number" #performancemangement name="answerName" (input)="getAnswerValues(1056,performancemangement.value)" (input)="AvgLeadership(1056,performancemangement.value)"/></td>
+                              <input type="hidden" name="questionId" value="1056" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Flexibility(Can the candidate shift gears and change
+                                  behavior according to the situation)
+                              </td>
+                              <td><input type="number" #fexibility name="answerName" (input)="getAnswerValues(1057,fexibility.value)" (input)="AvgLeadership(1058,fexibility.value)"/></td>
+                              <input type="hidden" name="questionId" value="1057"  />
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Motivational Ability(How does the candidate use feedback
+                                  and acknowledgement to inspire productivity)
+                              </td>
+                              <td><input type="number" #motivationalability name="answerName" (input)="getAnswerValues(1058,motivationalability.value)" (input)="AvgLeadership(1058,motivationalability.value)"/></td>
+                              <input type="hidden" name="questionId" value="1058" />
+                              </tr>
+  
+                              <tr>
+                              <td colspan="2">
+                                  Trust Building(Did he or she demonstrate an ability to
+                                  build trust)
+                              </td>
+                              <td><input type="number" #trustbuliding name="answerName" (input)="getAnswerValues(1059,trustbuliding.value)" (keyup)="AvgLeadership(1059,trustbuliding.value)"/></td>
+                              <input type="hidden" name="questionId" value="1059" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">
+                                  Integrity(Does the candidate have experience handling
+                                  confidential information)
+                              </td>
+                              <td><input type="number" #integrityconfidential name="answerName" (input)="getAnswerValues(1060,integrityconfidential.value)" (keyup)="AvgLeadership(1060,integrityconfidential.value)"/></td>
+                              <input type="hidden" name="questionId" value="1060" />
+                              </tr>
+                              <tr>
+                              <td colspan="2">Problem solving</td>
+                              <td><input type="number" #problemsolving name="answerName" (input)="getAnswerValues(1061,problemsolving.value)" (keyup)="AvgLeadership(1061,problemsolving.value)"/></td>
+                              <input type="hidden" name="questionId" value="1061" />
+                              </tr>
+  
+                              <tr>
+                                <table>
+                                  <td colspan="2">Average Score</td>
+                                </table>
+                              <td><button (click)="AverageTotalleadership(LeadershipAvg)">Total</button></td>
+                              <td><input type="text"/>{{leaderFinalTotal}}</td>
+                              </tr>
+  
+                              <tr>
+                              <td colspan="3">Technical Rating</td>
+                              <td colspan="2"><input type="text" formControlName="techinalRating"/></td>
+                              </tr>
+                              <tr>
+                              <td colspan="2">Personal Accomplishments</td>
+                              <td colspan="2"><input type="text" formControlName="personalAccomplishments" /></td>
+                              </tr>
+                              <tr>
+                              <td colspan="2">Overall Impression and Recommendation</td>
+                              <td colspan="2"><input type="text"formControlName="overallImpression" /></td>
+                              </tr>
+                          </table>
+                      </div>
+                  </tr>
+                </table>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="primary_btn " (click)="previewfunction()">preview</button>
+  </form>
+</div>
+
+ <div *ngIf="preview" class="main">
+      <div class="evaluation-form">
+        <div class="techEvaluation-form">
+          <form id="evaluation-form" method="" action="">
+            <div class="candidate-rating table-responsive">
+              <table class="main-table">
+                <tr>
+                    <div class="table-responsive">
+                        <table class="evaluationtable">
+                            <tr>
+                            <th class="text-center text-uppercase" colspan="4">
+                                Interview Evaluation Sheet
+                            </th>
+                            </tr>
+                            <tr>
+                            <th>Date : <input type="date" value={{this.InterviewEvaluation.value.date}} disabled/></th>
+                            <th></th>
+                            <th>Interviewed by : <input type="text" value={{this.InterviewEvaluation.value.interViewBy}} disabled/></th>
+                            <th></th>
+                            </tr>
+                            <tr>
+                            <th>
+                                <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="rating"
+                                    id="goodtohire"
+                                    value="1"
+                                    [(ngModel)]="Status"
+                                    disabled
+                                />
+                                <label class="form-check-label" for="goodtohire">
+                                    Good To Hire
+                                </label>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="rating"
+                                    id="hold"
+                                    value="2"
+                                    [(ngModel)]="Status"
+                                    disabled
+                                />
+                                <label class="form-check-label" for="hold">
+                                    Hold For Consideration
+                                </label>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="rating"
+                                    id="donothire"
+                                    value="3"
+                                    [(ngModel)]="Status"
+                                    disabled
+                                />
+                                <label class="form-check-label" for="donothire">
+                                    Do Not Hire
+                                </label>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="rating"
+                                    id="anotherpos"
+                                    value="4"
+                                    [(ngModel)]="Status"
+                                    disabled
+                                />
+                                <label class="form-check-label" for="anotherpos">
+                                    Better Qualified For Another Position
+                                </label>
+                                </div>
+                            </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="candidate-details">
+                            <tr>
+                            <th class="text-center text-uppercase" colspan="4">
+                                Details
+                            </th>
+                            </tr>
+                            <tr>
+                            <th>Candidate Name :</th>
+                            <th><input type="text" value={{this.InterviewEvaluation.value.candidateName}} disabled/></th>
+                            <th>Interviewer :</th>
+                            <th><input type="text" value={{this.InterviewEvaluation.value.interviewer}} disabled/></th>
+                            </tr>
+                            <tr>
+                            <th>Position/Job Title :</th>
+                            <th><input type="text" value={{this.InterviewEvaluation.value.position}} disabled/></th>
+                            <th>Department/Team :</th>
+                            <th><input type="text" value={{this.InterviewEvaluation.value.department}} disabled/></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="work-experience">
+                            <tr>
+                            <th rowspan="2">Prior Work Experience</th>
+                            <th>Total Work Experience</th>
+                            <td><input value={{this.InterviewEvaluation.value.totalWorkExperience}} disabled></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Relevant Experience</th>
+                            <td><input value={{this.InterviewEvaluation.value.relevantExperience}} disabled></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th rowspan="3">
+                                Education background(Does the candidate have the
+                                appropriate educational qualifications or training for
+                                this position
+                            </th>
+                            <th>Academic Qualification</th>
+                            <td><input value={{this.InterviewEvaluation.value.academicQualifications}} disabled></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Courses/Certifications</th>
+                            <td><input value={{this.InterviewEvaluation.value.coursesAndCertifications}} disabled></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Training/Internship</th>
+                            <td><input value={{this.InterviewEvaluation.value.traniningAndInternship}} disabled></td>
+                            <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="communication-skills">
+                            <tr>
+                            <th colspan="3">
+                                Lowest rating at 1 and highest rating at 5
+                            </th>0
+                            <th>Ratings/Scores</th>
+                            </tr>
+                            <tr>
+                            <td rowspan="6">communication Skills</td>
+                            <td rowspan="2">Verbal Skills</td>
+                            <td>Written Skills</td>
+                            <td><input [value]="getanswerpreview(1039)" disabled /></td>
+                            </tr>
+                            <tr>
+                            <td>Oral Skills</td>
+                            <td><input [value]="getanswerpreview(1040)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td rowspan="3">Non-Verbal</td>
+                            <td>Body Language</td>
+                            <td><input [value]="getanswerpreview(1041)" disabled></td>
+                            </tr>
+
+                            <tr>
+                            <td>Presentable</td>
+                            <td><input [value]="getanswerpreview(1042)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td>Discipline(Punctuality)</td>
+                            <td><input [value]="getanswerpreview(1043)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Average Score</td>
+                            <td><input [value] = "AverageTotalcommunication(communicationAvg)" disabled></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="behavioural-skills">
+                            <tr>
+                            <td rowspan="9">Cultural/Behavioral Fit</td>
+                            <td colspan="2">Attitude</td>
+                            <td><input [value]="getanswerpreview(1044)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Enthusiasm</td>
+                            <td><input [value]="getanswerpreview(1045)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Team Player</td>
+                            <td><input [value]="getanswerpreview(1046)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Initiative</td>
+                            <td><input [value]="getanswerpreview(1047)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Time Management</td>
+                            <td><input [value]="getanswerpreview(1048)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Innovative/Creativity</td>
+                            <td><input [value]="getanswerpreview(1049)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Motivation(Is the candidate able to explain what
+                                motivates them both at work and in Life)
+                            </td>
+                            <td><input [value]="getanswerpreview(1050)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Knowledge of Company</td>
+                            <td><input [value]="getanswerpreview(1051)" disabled></td>
+                            </tr>
+
+                            <tr>
+                            <td colspan="2">Average Score</td>
+                            <td><input [value]="AverageTotalCulturalBehavioralFit(CulturalBehavioralFit)" disabled></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="leadership-skills">
+                            <tr>
+                            <td rowspan="13">Leadership</td>
+                            <td colspan="2">Did the candidate manage a team</td>
+                            <td><input [value]="getanswerpreview(1052)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">If yes, whats the maximum team size</td>
+                            <td><input [value]="getanswerpreview(1053)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Decision Making Skills(Did the candidate demonstrate an
+                                ability to make timely and informed decisions)
+                            </td>
+                            <td><input [value]="getanswerpreview(1054)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Supervising/Delegation(Can the candidate effectively
+                                direct the actions of others)
+                            </td>
+                            <td><input [value]="getanswerpreview(1055)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Performance Management(Does the candidate provide an
+                                effective process for performance management)
+                            </td>
+                            <td><input [value]="getanswerpreview(1056)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Flexibility(Can the candidate shift gears and change
+                                behavior according to the situation)
+                            </td>
+                            <td><input [value]="getanswerpreview(1057)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Motivational Ability(How does the candidate use feedback
+                                and acknowledgement to inspire productivity)
+                            </td>
+                            <td><input [value]="getanswerpreview(1058)" disabled></td>
+                            </tr>
+
+                            <tr>
+                            <td colspan="2">
+                                Trust Building(Did he or she demonstrate an ability to
+                                build trust)
+                            </td>
+                            <td><input [value]="getanswerpreview(1059)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                Integrity(Does the candidate have experience handling
+                                confidential information)
+                            </td>
+                            <td><input [value]="getanswerpreview(1060)" disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Problem solving</td>
+                            <td><input [value]="getanswerpreview(1061)" disabled></td>
+                            </tr>
+
+                            <tr>
+                            <td colspan="2">Average Score</td>
+                            <td><input [value]="AverageTotalleadership(LeadershipAvg)" disabled></td>
+                            </tr>
+
+                            <tr>
+                            <td colspan="3">Technical Rating</td>
+                            <td><input type="text" value ={{this.InterviewEvaluation.value.techinalRating}} disabled></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Personal Accomplishments</td>
+                            <td colspan="2"><input type="text" value={{this.InterviewEvaluation.value.personalAccomplishments}} disabled/></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">Overall Impression and Recommendation</td>
+                            <td colspan="2"><input type="text" value={{this.InterviewEvaluation.value.overallImpression}} disabled/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button type="button" class="primary_btn " (click)="submitInterviewEvaluationform()">Submit</button>
+      <button type="button" class="primary_btn " (click)="editfuction()">Edit</button>
+    </div>

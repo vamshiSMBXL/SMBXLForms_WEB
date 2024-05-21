@@ -1,0 +1,253 @@
+h1 {
+    font-size: 30px;
+}
+
+.h6 {
+    font-weight: 600;
+}
+
+.main {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px 90px;
+}
+
+.evaluation-form h1 {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.personal-data {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 4px double #000;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    width: 250px;
+    font-weight: bold;
+}
+
+.no-border-bottom {
+    border-bottom: none
+}
+
+.no-border-top {
+    border-top: none;
+}
+
+.rating-table th:nth-child(2),
+.rating-table-three th:nth-child(2),
+.rating-table td:nth-child(2),
+.rating-table-three th:nth-child(2) {
+    width: 50%;
+}
+
+
+.rating-table th:first-child,
+.rating-table-three th:first-child .rating-table td:first-child,
+.rating-table-three td:first-child {
+    width: 5%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+
+
+input[type='text'],
+input[type='date'] {
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    outline: none;
+}
+
+label,
+p {
+    font-size: 16px;
+}
+
+#candidateName,
+#interviewerName {
+    width: 50%;
+}
+
+.personal-data .form-group {
+    display: grid;
+    grid-template-columns: 16% auto;
+    align-items: center;
+}
+
+.personal-data .form-group.date {
+    gap: 5px;
+}
+
+.textarea-content {
+    border: 1px solid #000;
+    padding: 10px;
+
+}
+
+.textarea-content h6 {
+    text-decoration: underline;
+}
+
+textarea:focus-visible {
+    outline: 0;
+    border-color: transparent;
+}
+
+.rating-div {
+    position: relative;
+    padding: 20px 0;
+}
+
+.rating-div .form-check-label,
+.category .form-check-label {
+    font-weight: 600;
+}
+
+.category {
+    position: relative;
+    padding: 20px 0;
+}
+
+.rating-div::before {
+    position: absolute;
+    content: "";
+    width: 102%;
+    height: 1px;
+    background-color: #000;
+    left: -11px;
+    top: 0;
+}
+
+.rating-div::after {
+    position: absolute;
+    content: "";
+    width: 102%;
+    height: 1px;
+    background-color: #000;
+    left: -11px;
+    bottom: 0;
+}
+
+.category::before {
+    position: absolute;
+    content: "";
+    width: 102%;
+    height: 1px;
+    background-color: #000;
+    left: -11px;
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .main {
+        padding: 30px;
+    }
+
+    .evaluation-form h1 {
+        border: none;
+        margin-top: 20px !important;
+    }
+
+    .personal-data {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-data .form-group {
+        grid-template-columns: 21% auto;
+    }
+
+    #candidateName,
+    #interviewerName {
+        width: 100%;
+
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .main {
+        padding: 15px;
+    }
+
+    .evaluation-form h1 {
+        font-size: 20px;
+        border: none;
+        margin-top: 20px !important;
+    }
+
+    .personal-data {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-data .form-group {
+        display: inline;
+    }
+
+    .personal-data .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    #candidateName,
+    #interviewerName,
+    #date {
+        width: 100%;
+    }
+
+    .rating-div h4,
+    .category h4 {
+        text-decoration: underline;
+    }
+
+    .rating-div .form-group {
+        flex-direction: column;
+        gap: 5px !important;
+    }
+
+    .rating-div::before,
+    .rating-div::after,
+    .category::before {
+        width: 107%;
+    }
+
+    .dateAndSignature {
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+    }
+    .primary_btn {
+    padding:5px 10px;
+    color:#ffffff;
+    border:1px solid #d71f2b;
+    background-color: #d71f2b;
+    font-size:24px;
+    display: flex;
+    justify-content: center;
+    margin:0 auto;
+    outline:none;
+   }
+}

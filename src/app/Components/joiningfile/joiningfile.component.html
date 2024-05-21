@@ -1,0 +1,580 @@
+<div class="outer container">
+    <form *ngIf="joingform" [formGroup]="joingform">
+        <table class="candi_tb table-responsive" >
+            <table class="candi_header">
+                <tbody>
+                    <tr>
+                    <td><img class="smbxl_img" src="assets/Images/smbxlLogo.svg" alt="logos"></td>
+                    </tr>
+                    <tr>
+                        <td class="joining_text" >EMPLOYEE JOINING FORM</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col"></div>
+                                <div class="col" style="border-left: 1px solid #000;">
+                                    <form>
+                                        <label> EMP Code:</label>
+                                        <input type="text" class="input_adjuster" id="emp" formControlName="empCode" >
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr><td>
+                        <form>
+                            <label>NAME:</label>
+                            <input type="text" class="input_adjuster" id="name" formControlName="name">
+                        </form></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="add_pic">
+                                <tr>
+                                    <td style="border: none;">
+                                        <table class="add_content" style="height: 200px;">
+                                            <tr>
+                                                <td style="border: none;">
+                                                    <form>
+                                                    <label>FATHERS NAME:</label>
+                                                    <input type="text" class="input_adjuster" id="fname" formControlName="fatherName">
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-bottom: none;border-left: none;border-right: none;">
+                                                    <table style="width: 100%;height: 154.783px;">
+                                                        <tr>
+                                                            <td style="border: none;">
+                                                                <form>
+                                                                    <label>CORRESPONDENCE ADDRESS</label>
+                                                                    <textarea id="caddress" name="caddress" class="addresses" style="width: 100%;height: 154px;" formControlName="correspondenceAddress" ></textarea>
+                                                                </form>
+                                                            </td>
+                                                            <td style="border-right: none;border-bottom: none;border-top: none;">
+                                                                <form>
+                                                                    <label>PERMANENT ADDRESS</label>
+                                                                    <textarea id="Paddress" name="Paddress" class="addresses" style="width: 100%;height: 154px;" formControlName = "permanentAddress"></textarea>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>                    
+                                    </td>
+                                    <td class="outer_pic">
+                                        <form class="put_pic">
+                                            <input type="file" class="imgfile" id="imgfile" placeholder="Affix your photograph here">
+                                        </form></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="indetail">
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>MOBILE NO:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="mobileNumber">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>EMAIL ID:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName = "emailId">
+                                            </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>DATE OF BIRTH:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="dateofbirth">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>DATE OF JOINING:</label>
+                                            <input type="text" class="input_adjuster" id="fname" style="width: 75%" formControlName="dateofjoining">
+                                            </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>DEPARTMENT:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName = "department">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>DESIGNATION:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="designation">
+                                            </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>BLOOD GROUP:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="bloodGroup">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>MARITAL STATUS:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="maritalStatus">
+                                            </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>GENDER:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="gender">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>AADHAAR No:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="adhaarCard">
+                                            </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>UAN (PF):</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="uanPf">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>PAN Card No:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="panCardNo">
+                                            </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col">
+                                    Passport:
+                                </div>
+                                <div class="col" style="border-left: 1px solid #000;">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="passportOption"
+                                            id="yesPassport"
+                                            value = 1
+                                            formControlName="passportFlag"
+                                        />
+                                        <label class="form-check-label" for="yesPassport">YES</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="passportOption"
+                                            id="noPassport"
+                                            value = 0
+                                            formControlName="passportFlag"
+                                            checked
+                                        />
+                                        <label class="form-check-label" for="noPassport">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-10" style="border-left: 1px solid #000;">
+                                    <span id="passportDetailsLabel">Yes, update details below</span>
+                                </div>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="indetail">
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>PASSPORT NO:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="passportNo">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>PLACE OF ISSUE:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="placeOfIssue">
+                                            </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <label>ISSUED ON:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="issuedOn">
+                                            </form>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <label>VALID UPTO:</label>
+                                            <input type="text" class="input_adjuster" id="fname" formControlName="validUpto">
+                                            </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr>
+                        <td>EMERGENCY CONTACT INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col">
+                                    <form>
+                                        <label>NAME:</label>
+                                        <input type="text" class="input_adjuster" id="fname" formControlName="emergencyContactName">
+                                    </form>
+                                </div>
+                                <div class="col" style="border-left: 1px solid #000;">
+                                    <form>
+                                        <label>RELATION:</label>
+                                        <input type="text" class="input_adjuster" id="fname" formControlName="emergencyContactRelation">
+                                    </form>
+                                </div>
+                                <div class="col" style="border-left: 1px solid #000;">
+                                    <form>
+                                        <label>CONTACT NO:</label>
+                                        <input type="text" class="input_adjuster" style="width: 74%;" id="fname" formControlName="contactNo">
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EDUCATIONAL DETAILS</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="edu_details" >
+                                <tr>
+                                    <th>DEGREE</th>
+                                    <th>SPECIALIZATION</th>
+                                    <th>COLLEGE / UNIVERSITY</th>
+                                    <th>YEAR OF PASSING</th>
+                                    <th>PERCENTAGE</th>
+                                </tr>
+                                <ng-container formArrayName="educationDetails">
+                                <ng-container *ngFor="let educationDetail of educationDetails().controls; let i = index" >
+                                    <tr [formGroupName]="i">
+                                        <td><input class="input_adjuster" type="text" formControlName="degree"/></td>
+                                        <td><input class="input_adjuster" type="text" formControlName="specialization"/></td>
+                                        <td><input class="input_adjuster" type="text"  formControlName="collageOrUniversity" /></td>
+                                        <td><input class="input_adjuster" type="text" formControlName="yearOfPassing" /></td>
+                                        
+                                      
+                                  <td><input class="input_adjuster" type="text" formControlName="percentage" /></td>
+                                    
+                                    </tr>
+                                  </ng-container>
+                                  <td><button class="btn btn-default" type="button" (click)="addEducationDetail()">Add</button></td>
+                                </ng-container>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr><td>EMPLOYMENT DETAILS (LAST THREE ORGANISATIONS)</td></tr>
+                    <tr>
+                        <td>
+                            <table style="width: 100%;text-align: center;">
+                                <tr style="width:100%;display: inherit;">
+                                    <th colspan="3">TOTAL EXPERIENCE</th>
+                                    <th colspan="2">
+                                        <form>
+                                            <input type="text" class="input_adjuster" id="fname">
+                                            <label>: YEARS</label>
+                                        </form>
+                                    </th>
+                                    <th>
+                                        <form>
+                                            <input type="text" class="input_adjuster" style="width: 70%;" id="fname">
+                                            <label>:MONTHS</label>
+                                        </form>
+                                    </th>
+                                </tr>
+                                <table style="width: 100%;text-align: center;">
+                                <tr>
+                                  <th>ORGANISATION</th>
+                                  <th>DESIGNATION</th>               
+                                  <th>
+                                    <table style="width: 100%; text-align: center;">
+                                        <tr>
+                                            <td colspan="2">PERIOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FROM</td>
+                                            <td style="width: 214.317px;">TO</td>
+                                        </tr>
+                                    </table>
+                                  </th>               
+                                  <th>ANNUAL CTC</th>               
+                                  <th>REASON FOR LEAVING</th>               
+                                </tr>
+                               <ng-container formArrayName="employmentDetailsData">
+                                <ng-container *ngFor="let employmentDetailsData of employmentDetailsData().controls; let i = index">
+                                    <tr [formGroupName]="i">
+                                        <td>
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="organizations">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="designation">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <table style="width: 100%">
+                                                <tr>
+                                                    <td>
+                                                        <form>
+                                                            <input type="text" class="input_adjuster" id="fname" formControlName="from">
+                                                        </form>
+                                                    </td>
+                                                    <td>
+                                                        <form>
+                                                            <input type="text" class="input_adjuster" id="fname" formControlName="to">
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="annualCTC">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="reasonForLeaving">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                                <td><button class="btn btn-default" type="button" (click)="addemploymentDetails()">Add</button></td>
+                               </ng-container>
+                            </table>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr><td>FAMILY DETAILS</td></tr>
+                    <tr>
+                        <td>
+                            <table style="width: 100%;">
+                                <tr style="text-align: center;">
+                                    <th>NAME</th>
+                                    <th>RELATIONSHIP</th>
+                                    <th>DATE OF BIRTH</th>
+                                    <th>OCCUPATION</th>
+                                </tr>
+                              <ng-container formArrayName="familyDetails">
+                              <ng-container *ngFor="let familyDetails of familyDetails().controls; let i = index">
+                                <tr [formGroupName]="i">
+                                    <td><form>
+                                        <input type="text" class="input_adjuster" id="fname" formControlName="name">
+                                    </form></td>
+                                    <td><form>
+                                        <input type="text" class="input_adjuster" id="fname" formControlName="relationShip">
+                                    </form></td>
+                                    <td><form>
+                                        <input type="text" class="input_adjuster" id="fname" formControlName="dateOfBirth">
+                                    </form></td>
+                                    <td><form>
+                                        <input type="text" class="input_adjuster" id="fname" formControlName="occupation">
+                                    </form></td>
+                                </tr>
+                              </ng-container>
+                              <td><button class="btn btn-default" type="button" (click)="addfamilyDetails()">Add</button></td>
+                              </ng-container>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr><td>PROFESSIONAL REFERENCES</td></tr>
+                    <tr>
+                        <td>
+                            <table style="width: 100%;">
+                            <ng-container formArrayName="professionalReferenceData">
+                                <ng-container *ngFor="let professionalReferenceData of professionalReferenceData().controls; let i = index">
+                                    <tr [formGroupName]="i">
+                                        <td>
+                                            <form>
+                                                <label>NAME : </label>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="name">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr [formGroupName]="i">
+                                        <td>
+                                            <form>
+                                                <label>ORGANISATION :</label>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="organisation">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr [formGroupName]="i">
+                                        <td>
+                                            <form>
+                                                <label>DESIGNATION :</label>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="designation">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr [formGroupName]="i">
+                                        <td>
+                                            <form>
+                                                <label>CONTACT NO:</label>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="contactNo">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr [formGroupName]="i">
+                                        <td>
+                                            <form>
+                                                <label>EMAIL ID : </label>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="emailId">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                                <td><button class="btn btn-default" type="button" (click)="addprofessionalReferenceData()">Add</button></td>
+                            </ng-container>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            I am giving my full consent to conduct a background check to confirm  my identity and previous employment.<br>I also understand that this is necessary  to meet all of the criteria for the position am appointed at SMBXL.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>DO YOU HAVE AN EXISTING ICICI BANK ACCOUNT:</td>
+                                    <td >
+                                        <form>
+                                           <label>EMAIL ID : </label>
+                                           <input type="text" class="input_adjuster" id="fname" formControlName="existBank">
+                                       </form>
+                                    </td>
+                                </tr>
+                                <table style="width: 100%;" >
+                                    <tr>
+                                        <td>ACCOUNT NUMBER</td>
+                                        <td style="width: 80%;">
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="accountNumber">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>IFSC CODE</td>
+                                        <td style="width: 80%;">
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="ifsCcode">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>BRANCH</td>
+                                        <td style="width: 80%;">
+                                            <form>
+                                                <input type="text" class="input_adjuster" id="fname" formControlName="branch">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </table>
+                        </td>
+                    </tr>
+                    <table>
+                    <tr>
+                        <td>I consent for SMBXL to deposit my salary directly into my bank account as per details as mentioned above.</td>
+                    </tr>
+                    <tr>
+                        <td style="height:25px;"></td>
+                    </tr>
+                    <tr><td>DECLARATION</td></tr>
+                    <tr><td>I HEREBY DECLARE THAT THE ABOVE INFORMATION PROVIDED IN THE APPLICATION FORM ARE TRUE , COMPLETE   AND CORRECT TO THE BEST OF MY KNOWLEDGE AND BELIEF. IN THE EVENT OF ANY INFORMATION FOUND FALSE     OR INCORRECT AT ANY STAGE, MY SERVICES ARE LIABLE TO BE TERMINATED WITHOUT NOTICE. I ALSO DECLARE    THAT IAM NOT UNDERGOING ANY MEDICAL TREATMENT AND AM FIT TO JOIN THE COMPANY.</td></tr>
+                    <tr>
+                        <td>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td>DATE</td>
+                                                <td style="width: 80%;">
+                                                    <form>
+                                                        <input type="text" class="input_adjuster" id="fname" formControlName="declarationDate">
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>PLACE</td>
+                                                <td style="width: 80%;">
+                                                    <form>
+                                                        <input type="text" class="input_adjuster" id="fname" formControlName="declarationPlace">
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%; height: 62px;">
+                                            <tr>
+                                                <td>SIGNATURE</td>
+                                                <td style="width: 80%;">
+                                                    <form>
+                                                        <input type="text" class="input_adjuster" id="fname" formControlName="declarationSignature">
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </table>
+            </table>
+        </table>
+        </table>
+        <button type="button" class="primary_btn " (click)="SubmitJoiningForm()">Submit</button>
+    </form>    
+</div>
