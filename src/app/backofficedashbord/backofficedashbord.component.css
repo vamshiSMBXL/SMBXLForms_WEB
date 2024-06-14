@@ -1,0 +1,232 @@
+.mainbody
+{
+    background-color: #ffff;
+    width: 100%;
+    height: 100%;
+}
+h3{
+    font-family: "Montserrat", sans-serif;  
+}
+p{
+    font-family: "Montserrat", sans-serif;
+}
+.edu_wrapper{
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+      background-color: #f8fafc;
+    /* box-shadow: 0 0 10px #c6c6c6; */
+   height: auto;
+   padding: 0px 21px;
+   border-radius: 20px;
+  }
+  #educationTable tr, #educationTable td{
+    width:unset!important;
+    background-color: #ffff;
+    text-align: center;
+}
+#educationTable{
+    padding: 10px;
+  }
+  #educationTable th{
+      padding:10px 0;
+  }
+  #educationTable td{
+      padding:0!important;
+  }
+  #educationTable input{
+    border: none;
+  }
+  .seperator{
+    border-bottom: 1px solid #bcbcbc;
+}
+.outerwrapper{
+
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 0 10px #cdcdcd;
+    height: 100vh;
+}
+.out_top{
+    display: flex;
+    justify-content:space-between ;
+    padding: 30px 20px;
+}
+.just_btn{
+    border: 1px solid #6c63ff;
+    color: #6c63ff;
+    padding: 0 25px;
+  height: 35px;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+
+}
+.just_btn:hover{
+    border: 1px solid #6c63ff;
+    color: #fff;
+    background-color: #6c63ff;
+}
+.candi_content{
+    padding: 0 20px 20px;
+}
+.outer_profile{
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #e5e5e5,#fff);
+    height: 80vh;
+}
+.avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 25px 46px    ;
+}
+.Candidate_name{
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+
+}
+.Loc{
+    color: darkgray;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+
+}
+.ctext{
+    color: #6c63ff;
+    padding-right: 50px;
+    font-weight:bold;
+    font-family: "Montserrat", sans-serif;
+
+}
+.outer_content{
+    height: 80vh;
+}
+.navigation{
+    display: flex;
+    justify-content:space-between ;
+}
+.navigation a{
+    text-decoration: none;
+}
+.navigate{
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #6c63ff;
+    margin: 20px 40px;
+  padding: 10px;
+  border-top: 10px solid #6c63ff;
+  font-family: "Montserrat", sans-serif;
+
+}
+.navigate:hover{
+    border: 1px solid darkgrey;
+    border-top: 10px solid darkgray;
+}
+.inner_content{
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    height: 79.5%;
+    background-image: linear-gradient(to top, #e5e5e5,#fff);
+
+}
+.assignto{
+    border:1px solid #000;
+    margin: 10px 40px;
+    padding: 20px 50px;
+}
+label{
+    margin: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+/* Style the input field */
+.table_input_search {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: 18px; /* This can be adjusted for better visibility */
+    width: 90%;
+  }
+  
+  /* Style the datalist options */
+  input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  
+  input::-webkit-input-placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Additional custom styling for the dropdown options (not all browsers support this) */
+  input::-webkit-datalist-button {
+    display: none; /* Hides the default dropdown button */
+  }
+  
+  /* If you want to style the options themselves (note: browser support for this is limited) */
+  datalist option {
+    font-size: 14px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  /* Make sure the datalist drop-down has proper styling */
+  datalist {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px; /* Set a max height if you have many options */
+    overflow-y: auto;
+  }
+  
+  /* Style the container for the email tags and input */
+  
+.email-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    box-sizing: border-box;
+    margin-left: 5px;
+  }
+  .assign_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /* Style for individual email tags */
+  .email-tag {
+    font-family: "Montserrat", sans-serif;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin: 5px;
+    align-items: center;
+  }
+  ::placeholder{
+    font-family: "Montserrat", sans-serif;
+font-size: 13px;
+  }
+  .remove-email {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .table_input_search {
+    border: none;
+    flex-grow: 1;
+    margin: 2px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .table_input_search:focus {
+    outline: none;
+  }
+  

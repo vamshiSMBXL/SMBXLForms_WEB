@@ -182,7 +182,7 @@
                                   <td colspan="2">Average Score</td>
                                 </table>
                               <td><button (click)="AverageTotalcommunication(communicationAvg)">Total</button></td>
-                              <td><input type="text"/>{{commFinalTotal}}</td>
+                              <td><input type="text" value={{commFinalTotal}}/></td>
                               </tr>
                           </table>
                       </div>
@@ -239,7 +239,7 @@
                                   <td colspan="2">Average Score</td>
                                 </table>
                               <td><button (click)="AverageTotalCulturalBehavioralFit(CulturalBehavioralFit)">Total</button></td>
-                              <td><input type="text"/>{{culterFinalTotal}}</td>
+                              <td><input type="text" value={{culterFinalTotal}}/></td>
                               </tr>
                           </table>
                       </div>
@@ -325,7 +325,7 @@
                                   <td colspan="2">Average Score</td>
                                 </table>
                               <td><button (click)="AverageTotalleadership(LeadershipAvg)">Total</button></td>
-                              <td><input type="text"/>{{leaderFinalTotal}}</td>
+                              <td><input type="text" value={{leaderFinalTotal}}/></td>
                               </tr>
   
                               <tr>
@@ -349,11 +349,11 @@
           </div>
         </div>
       </div>
-      <button type="button" class="primary_btn " (click)="previewfunction()">preview</button>
+      <button type="button" class="buttondata " (click)="previewfunction()">preview</button>
   </form>
 </div>
 
- <div *ngIf="preview" class="main">
+ <div *ngIf="preview" class="main" [ngClass]="{'blur-background': showPopup}">
       <div class="evaluation-form">
         <div class="techEvaluation-form">
           <form id="evaluation-form" method="" action="">
@@ -673,6 +673,24 @@
           </form>
         </div>
       </div>
-      <button type="button" class="primary_btn " (click)="submitInterviewEvaluationform()">Submit</button>
-      <button type="button" class="primary_btn " (click)="editfuction()">Edit</button>
+      <div class="centered-button-container">
+        <button type="button" class="buttondata " (click)="submitInterviewEvaluationform()">Submit</button>
+        <button type="button" class="buttondata " (click)="editfuction()">Edit</button>
+      </div>
     </div>
+    <div *ngIf="showPopup" class="popup">
+        <app-successresponce (closePopup)="closePopup()"></app-successresponce>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

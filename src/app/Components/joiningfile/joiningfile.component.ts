@@ -14,6 +14,7 @@ export class JoiningfileComponent implements OnInit{
   Formarraydata:FormGroup | undefined;
   Formarray:FormArray | undefined;
   joingform: FormGroup | undefined;
+  preview: boolean | undefined;
   constructor(private fb: FormBuilder,private serviceService: ServiceService) {}
 
   // ngOnInit(): void {
@@ -178,7 +179,11 @@ addemploymentDetails(){
   {
     debugger
     this.serviceService.AddNewJoining(this.joingform?.value)
-        .subscribe((res) => {          
+        .subscribe((res) => {   
+          if(res === true)
+            {
+              this.preview = true;
+            }       
         });
     // this.SubmitEducatindetails()
   }

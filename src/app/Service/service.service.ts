@@ -56,8 +56,49 @@ export class ServiceService {
   getCandidateEvaluationPreview(name: string): Observable<any> {
     debugger
     let httpParams = new HttpParams().set('name', name);
-    console.log(httpParams);
 
     return this.http.get<any>(`${this.serveiceurl}/CandidateEvalutionFormPreview?name=${name.toString()}`);
+  }
+  uploadPhoto(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    return this.http.post<any>(this.serveiceurl, formData);
+  }
+  getallcollagesData():Observable<any>
+  {debugger
+    return this.http.get<any>(this.serveiceurl+'/GetCollageList');
+  }
+  getAllCandidateInfo():Observable<any>
+  {
+    debugger
+    return this.http.get<any>(this.serveiceurl+'/GetAllCandidateData');
+  }
+  getallpositionlist():Observable<any>
+  {
+    debugger;
+    return this.http.get<any>(this.serveiceurl+'/GetAllPositions');
+  }
+  getallinterviewerlist()
+  {
+    return this.http.get<any>(this.serveiceurl+'/Interviewerlist');
+  }
+  getAlldegreeList():Observable<any>
+  {
+    debugger
+    return this.http.get<any>(this.serveiceurl+'/DegreeList');
+  }
+  getAlldegreespecializationlist() :Observable<any>
+  {
+    debugger
+    return this.http.get<any>(this.serveiceurl+'/DegreeSpecializationList');
+  }
+  getAllStatesList() : Observable<any>
+  {
+    return this.http.get<any>(this.serveiceurl+'/ListOfstate');
+  }
+  getAllcitysandstates() : Observable<any>
+  {
+    debugger
+    return this.http.get<any>(this.serveiceurl+'/ListofCitysandStates');
   }
 }

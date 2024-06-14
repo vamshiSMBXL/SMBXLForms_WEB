@@ -13,6 +13,12 @@ import { CandateEvaluationPreviewComponent } from './candate-evaluation-preview/
 import { LandingpageComponent } from './Components/landingpage/landingpage.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { ExitInterviewFormComponent } from './exit-interview-form/exit-interview-form.component';
+import { SuccessresponceComponent } from './successresponce/successresponce.component';
+import { FilterPipe } from './Service/filter.pipe';
+import { BackofficedashbordComponent } from './backofficedashbord/backofficedashbord.component';
+import { CandidateDashbordComponent } from './candidate-dashbord/candidate-dashbord.component';
+import { SortEmailsPipe } from './Service/sort-emails.pipe';
+
 
 const appRoutes: Routes = [
   { path: 'joining', component: JoiningfileComponent },
@@ -20,7 +26,10 @@ const appRoutes: Routes = [
   { path:'candidateEvaluation', component: CandateEvaluationComponent},
   { path:'InterviewEvaluation', component: InterviewEvaluationformComponent},
   { path:'ExitInterview', component: ExitInterviewFormComponent},
-  { path:'candidateEvaluationPreview', component: CandateEvaluationPreviewComponent}
+  { path:'candidateEvaluationPreview', component: CandateEvaluationPreviewComponent},
+  { path:'successresponce', component: SuccessresponceComponent},
+  { path:'Landingpage', component: LandingpageComponent}
+  
 ];
 @NgModule({
   declarations: [
@@ -31,14 +40,20 @@ const appRoutes: Routes = [
     InterviewEvaluationformComponent,
     CandateEvaluationPreviewComponent,
     LandingpageComponent,
-    ExitInterviewFormComponent
-  ],
+    ExitInterviewFormComponent,
+    SuccessresponceComponent,
+    FilterPipe,
+    BackofficedashbordComponent,
+    CandidateDashbordComponent,
+    SortEmailsPipe ,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+  
     RouterModule.forRoot(appRoutes)
   
   ],

@@ -1,0 +1,22 @@
+.centered-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust as needed */
+  }
+  
+  .buttondata {
+    background-color: rgb(146, 146, 148);
+    color: rgb(241, 239, 239);
+    padding: 15px 30px; /* Increase size */
+    font-size: 18px; /* Increase font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-right: 5px;
+  }
+  
+  .buttondata:hover {
+    background-color: rgb(64, 64, 85); /* Darker blue on hover */
+  }
+  

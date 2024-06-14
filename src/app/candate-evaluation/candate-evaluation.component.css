@@ -1,253 +1,170 @@
-h1 {
+.mainbody
+{
+    background-color: #ffff;
+    width: 97%;
+    height: 56vh;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+.outer-wrapper{
+  border: 1px solid #d1d1d1;
+  margin: 40px;
+  box-shadow: 0 0 10px #d1d1d1;
+}
+.header{
+    padding-top: 30px;
+    text-align: center;
     font-size: 30px;
+    font-family: "Montserrat", sans-serif;
 }
-
-.h6 {
-    font-weight: 600;
-}
-
-.main {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 20px 90px;
-}
-
-.evaluation-form h1 {
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 0 auto;
-}
-
-.personal-data {
-    display: grid;
-    grid-template-columns: 80% 20%;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 4px double #000;
-}
-
-th,
-td {
-    border: 1px solid #000;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    width: 250px;
-    font-weight: bold;
-}
-
-.no-border-bottom {
-    border-bottom: none
-}
-
-.no-border-top {
-    border-top: none;
-}
-
-.rating-table th:nth-child(2),
-.rating-table-three th:nth-child(2),
-.rating-table td:nth-child(2),
-.rating-table-three th:nth-child(2) {
-    width: 50%;
-}
-
-
-.rating-table th:first-child,
-.rating-table-three th:first-child .rating-table td:first-child,
-.rating-table-three td:first-child {
-    width: 5%;
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-    padding: 5px;
-    box-sizing: border-box;
-
-}
-
-
-input[type='text'],
-input[type='date'] {
-    height: 35px;
-    border-radius: 3px;
-    border: 1px solid #000;
-    outline: none;
-}
-
-label,
-p {
-    font-size: 16px;
-}
-
-#candidateName,
-#interviewerName {
-    width: 50%;
-}
-
-.personal-data .form-group {
-    display: grid;
-    grid-template-columns: 16% auto;
-    align-items: center;
-}
-
-.personal-data .form-group.date {
-    gap: 5px;
-}
-
-.textarea-content {
-    border: 1px solid #000;
-    padding: 10px;
-
-}
-
-.textarea-content h6 {
-    text-decoration: underline;
-}
-
-textarea:focus-visible {
-    outline: 0;
-    border-color: transparent;
-}
-
-.rating-div {
-    position: relative;
-    padding: 20px 0;
-}
-
-.rating-div .form-check-label,
-.category .form-check-label {
-    font-weight: 600;
-}
-
-.category {
-    position: relative;
-    padding: 20px 0;
-}
-
-.rating-div::before {
-    position: absolute;
-    content: "";
-    width: 102%;
-    height: 1px;
-    background-color: #000;
-    left: -11px;
-    top: 0;
-}
-
-.rating-div::after {
-    position: absolute;
-    content: "";
-    width: 102%;
-    height: 1px;
-    background-color: #000;
-    left: -11px;
-    bottom: 0;
-}
-
-.category::before {
-    position: absolute;
-    content: "";
-    width: 102%;
-    height: 1px;
-    background-color: #000;
-    left: -11px;
-}
-
-@media only screen and (min-width:768px) and (max-width:991px) {
-    .main {
-        padding: 30px;
-    }
-
-    .evaluation-form h1 {
-        border: none;
-        margin-top: 20px !important;
-    }
-
-    .personal-data {
-        grid-template-columns: 1fr;
-    }
-
-    .personal-data .form-group {
-        grid-template-columns: 21% auto;
-    }
-
-    #candidateName,
-    #interviewerName {
-        width: 100%;
-
-    }
-}
-
-@media only screen and (max-width:767px) {
-    .main {
-        padding: 15px;
-    }
-
-    .evaluation-form h1 {
-        font-size: 20px;
-        border: none;
-        margin-top: 20px !important;
-    }
-
-    .personal-data {
-        grid-template-columns: 1fr;
-    }
-
-    .personal-data .form-group {
-        display: inline;
-    }
-
-    .personal-data .form-group {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-    }
-
-    #candidateName,
-    #interviewerName,
-    #date {
-        width: 100%;
-    }
-
-    .rating-div h4,
-    .category h4 {
-        text-decoration: underline;
-    }
-
-    .rating-div .form-group {
-        flex-direction: column;
-        gap: 5px !important;
-    }
-
-    .rating-div::before,
-    .rating-div::after,
-    .category::before {
-        width: 107%;
-    }
-
-    .dateAndSignature {
-        flex-direction: column;
-    }
-
-    input[type="text"],
-    input[type="date"] {
-        width: 100%;
-    }
-    .primary_btn {
-    padding:5px 10px;
-    color:#ffffff;
-    border:1px solid #d71f2b;
-    background-color: #d71f2b;
-    font-size:24px;
+.input-container-column {
     display: flex;
-    justify-content: center;
-    margin:0 auto;
-    outline:none;
-   }
-}
+    flex-direction: column;
+    margin-bottom: 20px; /* Space between input fields */
+  }
+  .input-container-row
+  {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px; /* Space between input fields */
+    justify-content: end;
+  }
+  .input-container label {
+    margin-top: 5px; /* Space between input field and label */
+  }
+  .mainDiv
+  {
+    padding: 30px 70px;
+  margin: 20px 40px;
+  border-top: 2px solid #6d91b4;
+  }
+  .lableClass{
+    margin-bottom: 10px;
+    padding-top: 10px;
+    margin-right: 15px;
+    font-family: "Montserrat", sans-serif;
+  }
+  input[type="date"]{
+    font-family: "Montserrat", sans-serif;
+    padding-left: 10px;
+  }
+  .inputFeilds{
+    width: 55%;
+    height: 30px;
+  }
+  .inputFeildsTotal{
+    width:20%;
+    height:30px;
+  }
+  p{
+    font-family: "Montserrat", sans-serif;
+    padding: 20px 0;
+  }
+  .tablestyle{
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .tablestyle td{
+    font-family: "Montserrat", sans-serif;
+
+  }
+  .tablestyle th{
+    font-family: "Montserrat", sans-serif;
+
+  }
+  .tablestyle th:nth-child(3){
+    background-color: #f49726;
+  }
+  .tablestyle th:nth-child(4){
+    background-color: #ec5a1c;
+  }
+  .tablestyle th:nth-child(5){
+    background-color: #94c537;
+  }
+  .tablestyle th:nth-child(6){
+    background-color: #faf441;
+  }
+  .tablestyle th:nth-child(7){
+    background-color: #5db44b;
+  }
+  .tablestyle tr td{
+    border: 1px solid #565656;
+  }
+  .tablestyle tr th{
+    border: 1px solid #565656;
+  }
+  .tablestyle td:first-child{
+    text-align: center;
+    margin-top: 20px;
+  }
+  .tablestyle td{
+    padding: 10px;
+  }
+  .tablestyle th{
+    padding: 10px;
+  }
+  .radio-button {
+    transform: scale(1.2); /* Scale the radio button */
+    margin: 0 auto; /* Center radio buttons */
+    display: block;
+    accent-color: #565656;
+  }
+  .textareainputFeilds{
+    height: 125px; /* Set the height to 200 pixels */
+    width: 55%; /* Set the width to 300 pixels (optional) */
+    padding: 10px; /* Optional padding for better text spacing */
+    box-sizing: border-box; /* Ensure padding and border are included in the total width and height */
+    font-size: 16px; /* Set the font size (optional) */
+    border: 1px solid #ccc; /* Set the border style (optional) */
+    border-radius: 4px; /* Set the border radius (optional) */
+    resize: none; /* Prevent resizing (optional) */
+  }
+  
+  .ratingTable{
+    border: 1px solid #565656;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .ratingTable th{
+    border: 1px solid #565656;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+  }
+  label{
+    font-family: "Montserrat", sans-serif;
+  }
+  .ratingTable th:nth-child(1){
+    background-color: #f49726;
+  }
+  .ratingTable th:nth-child(2){
+    background-color: #ec5a1c;
+  }
+  .ratingTable th:nth-child(3){
+    background-color: #94c537;
+  }
+  .ratingTable th:nth-child(4){
+    background-color: #faf441;
+  }
+  .ratingTable th:nth-child(5){
+    background-color: #5db44b;
+  }
+  .ratingTable tr td{
+    border: 1px solid #565656;
+    padding: 10px;
+  }
+  .InterviewResult{
+    width: 100%;
+    border: 1px solid #565656;
+    margin: 20px 0;
+    border-collapse: collapse;
+  }
+  .InterviewResult td{
+    padding: 10px;
+    border: 1px solid #565656;
+  }
+  /* .results{
+    margin-top: 10px;
+  } */

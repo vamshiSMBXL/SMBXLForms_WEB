@@ -4,6 +4,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms'
 import { Observable, forkJoin } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-exit-interview-form',
@@ -11,7 +12,7 @@ import { Observable, forkJoin } from 'rxjs';
   styleUrls: ['./exit-interview-form.component.css']
 })
 export class ExitInterviewFormComponent {
-constructor(private ei: FormBuilder,private servicservice:ServiceService){}
+constructor(private ei: FormBuilder,private servicservice:ServiceService,private router: Router){}
 preview : boolean | undefined;
 typeofWorkperformeddata : any;
 fairnessofworkloaddata : any;
@@ -40,6 +41,8 @@ listenedtosuggestionddata:any;
 Keptemployeesinformeddata:any;
 supportedworklifebalancedata:any;
 providedappropriatechallengingdata:any;
+showPopup: boolean = false;
+
 
 ExitInterview=this.ei.group({
   name:[null],
@@ -102,6 +105,7 @@ exitformgetAnswerValues(questionId:number,value:any){
 }
 submitExitinterviewform()
 {
+
   debugger
   this.questionObject.forEach(answer => {
     this.addExitInterviewData(answer);
@@ -110,16 +114,23 @@ submitExitinterviewform()
   this.servicservice.Exitinterviewform(this.ExitInterview.value)
   .subscribe((res)=>
   {
-    
+    if(res === true)
+      {
+        this.showPopup = true;
+      }
   })
 }
+// navigateToSecondComponent(): void {
+//   debugger
+
+//   this.router.navigate(['/successresponce']);
+ 
+// }
 getanswerpreview(questionid: any) {
-  debugger;
-  let answerdata = this.questionObject.filter(item => (item as any).questionId === questionid);
-  return answerdata[0].answerName
+      let answerdata = this.questionObject.filter(item => (item as any).questionId === questionid);
+      return answerdata[0].answerName;
 }
 previewfunction() {
-  debugger
   this.preview = true;
   this.typeofWorkperformeddata=this.getanswerpreview(1001);
   this.fairnessofworkloaddata = this.getanswerpreview(1002);
@@ -154,4 +165,25 @@ editfuction()
   debugger;
   this.preview = false;
 }
+closePopup() {
+  this.showPopup = false;
+  this.navigateToSecondComponent();
+}
+ navigateToSecondComponent(): void {
+   this.router.navigate(['/exitInterviewForm']);
+ }
+ circles = [1, 2, 3, 4];
+ currentStep = 1;
+
+ get progressWidth(): number {
+   return ((this.currentStep - 1) / (this.circles.length - 1)) * 100;
+ }
+
+ updateSteps(action: string): void {
+   if (action === 'next' && this.currentStep < this.circles.length) {
+     this.currentStep++;
+   } else if (action === 'prev' && this.currentStep > 1) {
+     this.currentStep--;
+   }
+ }
 }

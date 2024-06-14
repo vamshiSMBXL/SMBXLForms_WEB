@@ -1,0 +1,79 @@
+.outerwrapper{
+
+    border: 1px solid #cdcdcd;
+    margin: 20px 0px;
+    box-shadow: 0 0 10px #cdcdcd;
+}
+.out_top{
+    display: flex;
+    justify-content:space-between ;
+    padding: 30px 20px;
+}
+.just_btn{
+    border: 1px solid #6c63ff;
+    color: #6c63ff;
+    padding: 0 25px;
+  height: 35px;
+  background-color: transparent;
+}
+.just_btn:hover{
+    border: 1px solid #6c63ff;
+    color: #fff;
+    background-color: #6c63ff;
+}
+.candi_content{
+    padding: 0 20px 20px;
+}
+.outer_profile{
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #e5e5e5,#fff);
+}
+.avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 25px 75px;
+}
+.Candidate_name{
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+.Loc{
+    color: darkgray;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.ctext{
+    color: #6c63ff;
+    padding-right: 50px;
+    font-weight:bold;
+}
+
+.navigation{
+    display: flex;
+    justify-content:space-between ;
+}
+.navigation a{
+    text-decoration: none;
+}
+.navigate{
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #6c63ff;
+    margin: 20px 40px;
+  padding: 10px;
+  border-top: 10px solid #6c63ff;
+}
+.navigate:hover{
+    border: 1px solid darkgrey;
+    border-top: 10px solid darkgray;
+}
+.inner_content{
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    height: 79.5%;
+    background-image: linear-gradient(to top, #e5e5e5,#fff);
+
+}

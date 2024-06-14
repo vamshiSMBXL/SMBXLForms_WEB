@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidate Evaluation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="mainbody">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <div *ngIf="!selectedCandidate">
+      <div class="edu_wrapper">
+        <table id="educationTable" class="educationTable" style="width: 100%">
+          <tr class="tableHeader">
+            <th>S.No</th>
+            <th>Cadidiate Name</th>
+            <th>Candidate Phone</th>
+            <th>Position Applyed</th>
+            <th>Select candidate for evalution</th>
+          </tr>
+          <ng-container
+            *ngFor="let candidatedata of allCandidatesInfo; let i = index"
+          >
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>{{ candidatedata.name }}</td>
+              <td>{{ candidatedata.mobileNumber }}</td>
+              <td>{{ candidatedata.positionAppliedFor }}</td>
+              <td>
+                <button (click)="selectCandidate(candidatedata)">Select</button>
+              </td>
+            </tr>
+          </ng-container>
+        </table>
+      </div>
+    </div>
+    <div *ngIf="selectedCandidate">
+      <div class="outerwrapper">
+        <div class="out_top">
+          <div class="header">
+            <h3>Candidate Evaluation Details</h3>
+            <p>View Feedback Details</p>
+          </div>
+          <button class="just_btn" type="button" (click)="clearSelection()">
+            Back
+          </button>
+        </div>
+        <div class="candi_content row">
+          <div class="col-2 outer_profile">
+            <img class="avatar" src="/assets/Images/avatar.png" alt="avatar" />
+            <p class="Candidate_name">{{ selectedCandidate.name }}</p>
+            <p class="Loc">Loc</p>
+            <p>
+              <span class="ctext">Position</span
+              >{{ selectedCandidate.positionAppliedFor }}
+            </p>
+            <p>
+              <span class="ctext">Experience Level</span
+              >{{ selectedCandidate.years }}
+            </p>
+            <p>
+              <span class="ctext">Skills Required</span>.Net, Azure Cloud,
+              Microsoft Azure
+            </p>
+          </div>
+          <div class="col-10 outer_content">
+            <div class="navigation">
+              <a routerLink="/candate-evaluation"
+                ><div class="navigate">hello World</div></a
+              >
+              <a href="#"><div class="navigate">Evaluation Overview</div></a>
+              <a href="#"><div class="navigate">L1 Round Results</div></a>
+              <a href="#"><div class="navigate">L2 Round Results</div></a>
+            </div>
+            <div class="assignto">
+              <table>
+                <tbody>
+                    <tr>
+                        <td>
+                          <label for="assignInput">Assign to:</label>                         
+                            <!-- <div *ngFor="let item of selectedEmails,let i= index" class="email-tag">
+                              {{item}}
+                              <span class="remove-email" (click)="removeEmail(item)">×</span>
+                            </div> -->
+                            <div class="assign_wrapper">
+                                <div *ngFor="let item of selectedEmails" class="email-tag">{{item}}
+                                    <span class="remove-email" (click)="removeEmail(item)">×</span>
+                                </div>
+                            </div>
+                          <div class="email-container">                            
+                            <input 
+                              type="text" 
+                              id="assignInput" 
+                              list="userList" 
+                              placeholder="Assign Interviewed" 
+                              class="table_input table_input_search" 
+                              [(ngModel)]="searchTermData" 
+                              (change)="addEmail($event)"
+                              (keydown.enter)="addEmail($event)"
+                              style="height: 18px;width: 90%;"
+                            >
+                            <datalist id="userList">
+                              <option *ngFor="let email of getFilteredEmails()" [value]="email.emailId">
+                                {{email.emailId}}
+                              </option>
+                            </datalist>
+                          </div>
+                        </td>
+                      </tr>
+                      
+                </tbody>
+              </table>              
+            </div>
+            <div class="eva_form">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

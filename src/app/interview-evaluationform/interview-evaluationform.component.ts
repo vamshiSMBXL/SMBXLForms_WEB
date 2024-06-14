@@ -4,6 +4,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms'
 import { Observable, forkJoin } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-interview-evaluationform',
@@ -11,9 +12,10 @@ import { Observable, forkJoin } from 'rxjs';
   styleUrls: ['./interview-evaluationform.component.css']
 })
 export class InterviewEvaluationformComponent implements OnInit {
-  constructor(private Ie: FormBuilder, private serviceService: ServiceService) { }
+  constructor(private Ie: FormBuilder, private serviceService: ServiceService,private router: Router ) { }
 
   preview: boolean = false;
+  showPopup : boolean | undefined;
   InterviewEvaluation = this.Ie.group({
     date: [],
     statues: [],
@@ -138,7 +140,10 @@ export class InterviewEvaluationformComponent implements OnInit {
   CandidateAnswersApi() {
     this.serviceService.CandidateResponce(this.questionObject)
       .subscribe((res => {
-
+          if(res === true)
+            {
+              this.showPopup = true;
+            }
       }))
   }
 
@@ -228,5 +233,13 @@ export class InterviewEvaluationformComponent implements OnInit {
   debugger;
   this.preview = false;
 }
+closePopup() {
+  this.showPopup = false;
+  this.navigateToSecondComponent();
 }
+ navigateToSecondComponent(): void {
+   this.router.navigate(['/exitInterviewForm']);
+ }
+}
+  
 

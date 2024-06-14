@@ -1,811 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div *ngIf="!preview">
-    <form id="Exitinterviewfrom" method="" action="" [formGroup]="ExitInterview">
-        <main>
-            <div class="main-wrapper">
-                <div class="wrapper">
-                    <div class="logo-img d-flex justify-content-center">
-                        <img id="logo" src="assets/Images/smbxlLogo.svg" alt="smbxl-logo">
-                    </div>
-                    <h1 class="h1 text-center">Exit Interview</h1>
-                    <table>
-                        <tr>
-                            <th>DETAILS</th>
-                            <th>VALUES</th>
-                        </tr>
-                        <tr>
-                            <td>NAME</td>
-                            <td><input type="text" id="name" name="name" formControlName="name"></td>
-                        </tr>
-                        <tr>
-                            <td>EMPLOYEE CODE</td>
-                            <td><input type="text" id="employee_code" name="employee_code" formControlName="employeeCode"></td>
-                        </tr>
-                        <tr>
-                            <td>DESIGNATION</td>
-                            <td><input type="text" id="designation" name="designation" formControlName="designation"></td>
-                        </tr>
-    
-                        <tr>
-                            <td>START DATE WITH ORGANIZATION</td>
-                            <td><input type="text" id="start_date" name="start_date" formControlName="startDateWithOrganization"></td>
-                        </tr>
-                        <tr>
-                            <td>DATE OF RESIGNATION</td>
-                            <td><input type="text" id="resignation_date" name="resignation_date" formControlName="dateOfResignation"></td>
-                        </tr>
-                        <tr>
-                            <td>SEPARATION DATE</td>
-                            <td><input type="text" id="separation_date" name="separation_date" formControlName="separationDate"></td>
-                        </tr>
-                        <tr>
-                            <td>TOTAL LENGTH OF SERVICE</td>
-                            <td><input type="text" id="length_of_service" name="length_of_service" formControlName="totalLengthOfService"></td>
-                        </tr>
-                    </table>
-    
-                    <h6 class="h6 mt-2">Please describe the primary reason(s) you are leaving your current position.</h6>
-    
-                    <div class="table-responsive">
-                    <table class="quit-reasons">
-                        <tr>
-                            <th>1</th>
-                            <th colspan="6">
-                                Please rate the following aspects of the job you are vacating. Use the 1 - 5 scale below.
-                            </th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>1 <br>poor</th>
-                            <th>2 <br>Unsatisfactory</th>
-                            <th>3<br>Average</th>
-                            <th>4<br>very satisfactory</th>
-                            <th>5 <br>Excellent</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Type of work performed</td>
-                            <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" #typeofWorkperformed (input)="exitformgetAnswerValues(1001,'1')"></td>
-                            <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" #typeofWorkperformed (input)="exitformgetAnswerValues(1001,'2')"></td>
-                            <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" #typeofWorkperformed (input)="exitformgetAnswerValues(1001,'3')"></td>
-                            <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" #typeofWorkperformed (input)="exitformgetAnswerValues(1001,'4')"></td>
-                            <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" #typeofWorkperformed (input)="exitformgetAnswerValues(1001,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Fairness of workload</td>
-                            <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" #fairnessofworkload (input)="exitformgetAnswerValues(1002,'1')"></td>
-                            <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" #fairnessofworkload (input)="exitformgetAnswerValues(1002,'2')"></td>
-                            <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" #fairnessofworkload (input)="exitformgetAnswerValues(1002,'3')"></td>
-                            <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" #fairnessofworkload (input)="exitformgetAnswerValues(1002,'4')"></td>
-                            <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" #fairnessofworkload (input)="exitformgetAnswerValues(1002,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Salary</td>
-                            <td><input type="radio" id="salary" name="salary" #salary (input)="exitformgetAnswerValues(1003,'1')"></td>
-                            <td><input type="radio" id="salary" name="salary" #salary (input)="exitformgetAnswerValues(1003,'2')"></td>
-                            <td><input type="radio" id="salary" name="salary" #salary (input)="exitformgetAnswerValues(1003,'3')"></td>
-                            <td><input type="radio" id="salary" name="salary" #salary (input)="exitformgetAnswerValues(1003,'4')"></td>
-                            <td><input type="radio" id="salary" name="salary" #salary (input)="exitformgetAnswerValues(1003,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Working Conditions</td>
-                            <td><input type="radio" id="workingConditions" name="workingConditions" #workingConditions (input)="exitformgetAnswerValues(1004,'1')" ></td>
-                            <td><input type="radio" id="workingConditions" name="workingConditions" #workingConditions (input)="exitformgetAnswerValues(1004,'2')" ></td>
-                            <td><input type="radio" id="workingConditions" name="workingConditions" #workingConditions (input)="exitformgetAnswerValues(1004,'3')" ></td>
-                            <td><input type="radio" id="workingConditions" name="workingConditions" #workingConditions (input)="exitformgetAnswerValues(1004,'4')" ></td>
-                            <td><input type="radio" id="workingConditions" name="workingConditions" #workingConditions (input)="exitformgetAnswerValues(1004,'5')" ></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Tools and equipment provided</td>
-                            <td><input type="radio" id="toolsandequipment" name="toolsandequipment" #toolsandequipment (input)="exitformgetAnswerValues(1005,'1')" ></td>
-                            <td><input type="radio" id="toolsandequipment" name="toolsandequipment" #toolsandequipment (input)="exitformgetAnswerValues(1005,'2')" ></td>
-                            <td><input type="radio" id="toolsandequipment" name="toolsandequipment" #toolsandequipment (input)="exitformgetAnswerValues(1005,'3')" ></td>
-                            <td><input type="radio" id="toolsandequipment" name="toolsandequipment" #toolsandequipment (input)="exitformgetAnswerValues(1005,'4')" ></td>
-                            <td><input type="radio" id="toolsandequipment" name="toolsandequipment" #toolsandequipment (input)="exitformgetAnswerValues(1005,'5')" ></td>
-                
-    
-                        <tr>
-                            <td></td>
-                            <td>Training received</td>
-                            <td><input type="radio" id="trainingrecived" name="trainingrecived" #trainingrecived (input)="exitformgetAnswerValues(1006,'1')"></td>
-                            <td><input type="radio" id="trainingrecived" name="trainingrecived" #trainingrecived (input)="exitformgetAnswerValues(1006,'2')"></td>
-                            <td><input type="radio" id="trainingrecived" name="trainingrecived" #trainingrecived (input)="exitformgetAnswerValues(1006,'3')"></td>
-                            <td><input type="radio" id="trainingrecived" name="trainingrecived" #trainingrecived (input)="exitformgetAnswerValues(1006,'4')"></td>
-                            <td><input type="radio" id="trainingrecived" name="trainingrecived" #trainingrecived (input)="exitformgetAnswerValues(1006,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Co-workers</td>
-                            <td><input type="radio" id="coworkers" name="coworkers" #coworkers (input)="exitformgetAnswerValues(1007,'1')"></td>
-                            <td><input type="radio" id="coworkers" name="coworkers" #coworkers (input)="exitformgetAnswerValues(1007,'2')"></td>
-                            <td><input type="radio" id="coworkers" name="coworkers" #coworkers (input)="exitformgetAnswerValues(1007,'3')"></td>
-                            <td><input type="radio" id="coworkers" name="coworkers" #coworkers (input)="exitformgetAnswerValues(1007,'4')"></td>
-                            <td><input type="radio" id="coworkers" name="coworkers" #coworkers (input)="exitformgetAnswerValues(1007,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Supervision received </td>
-                            <td><input type="radio" id="supervisionreceived" name="supervisionreceived" #supervisionreceived (input)="exitformgetAnswerValues(1008,'1')"></td>
-                            <td><input type="radio" id="supervisionreceived" name="supervisionreceived" #supervisionreceived (input)="exitformgetAnswerValues(1008,'2')"></td>
-                            <td><input type="radio" id="supervisionreceived" name="supervisionreceived" #supervisionreceived (input)="exitformgetAnswerValues(1008,'3')"></td>
-                            <td><input type="radio" id="supervisionreceived" name="supervisionreceived" #supervisionreceived (input)="exitformgetAnswerValues(1008,'4')"></td>
-                            <td><input type="radio" id="supervisionreceived" name="supervisionreceived" #supervisionreceived (input)="exitformgetAnswerValues(1008,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Level of input in decisions that affected you </td>
-                            <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" #levelofinputindecisions (input)="exitformgetAnswerValues(1009,'1')"></td>
-                            <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" #levelofinputindecisions (input)="exitformgetAnswerValues(1009,'2')"></td>
-                            <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" #levelofinputindecisions (input)="exitformgetAnswerValues(1009,'3')"></td>
-                            <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" #levelofinputindecisions (input)="exitformgetAnswerValues(1009,'4')"></td>
-                            <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" #levelofinputindecisions (input)="exitformgetAnswerValues(1009,'5')" ></td>
-                        </tr>
-                        <!-- Add more rows as needed -->
-                    </table>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="quit-reasons-three">
-                            <tr>
-                                <th>2.</th>
-                                <th colspan="6">
-                                    Did dissatisfaction with any of the following factors influence your decision to leave?
-                                </th>
-                            </tr>
-                            <tr> 
-                                <th></th>
-                                <th></th>
-                                <th>YES</th>
-                                <th>NO</th>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>Type of work</td>
-                                <td><input type="radio" id="typeofwork" name="typeofwork" #typeofwork (input)="exitformgetAnswerValues(1010,'0')"></td>
-                                <td><input type="radio" id="typeofwork" name="typeofwork" #typeofwork (input)="exitformgetAnswerValues(1010,'1')" ></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td> Working conditions (setting, schedule, flexibility) </td>
-                                <td><input type="radio" id="workingconditions" name="workingconditions" #workingconditions (input)="exitformgetAnswerValues(1011,'0')"></td>
-                                <td><input type="radio" id="workingconditions" name="workingconditions" #workingconditions (input)="exitformgetAnswerValues(1011,'1')"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td> Pay </td>
-                                <td><input type="radio" id="pay" name="pay" #pay (input)="exitformgetAnswerValues(1012,'0')"></td>
-                                <td><input type="radio" id="pay" name="pay" #pay (input)="exitformgetAnswerValues(1012,'1')"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td> Managemen </td>
-                                <td><input type="radio" id="managemen" name="managemen" #managemen (input)="exitformgetAnswerValues(1013,'0')"></td>
-                                <td><input type="radio" id="managemen" name="managemen" #managemen (input)="exitformgetAnswerValues(1013,'1')"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td> Location </td>
-                                <td><input type="radio" id="location" name="location" #location (input)="exitformgetAnswerValues(1014,'0')"></td>
-                                <td><input type="radio" id="location" name="location" #location (input)="exitformgetAnswerValues(1014,'1')"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td> Commute </td>
-                                <td><input type="radio" id="commute" name="commute" #commute (input)="exitformgetAnswerValues(1015,'0')"></td>
-                                <td><input type="radio" id="commute" name="commute" #commute (input)="exitformgetAnswerValues(1015,'1')"></td>
-                            </tr>
-        
-                            <!-- Add more rows as needed -->
-                        </table>
-                    </div>
-    <div class="table-responsive">
-                    <table class="quit-reasons-three">
-                        <tr>
-                            <th>3.</th>
-                            <th colspan="6">
-                                Please rate your supervisor on the following factors. Use the 1 – 5 scale below.
-                            </th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>1 <br>Never</th>
-                            <th>2<br>Seldom</th>
-                            <th>3<br> Often</th>
-                            <th> 4<br>Usually</th>
-                            <th>5 <br>Always</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Gave usable performance feedback </td>
-                            <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" #gaveusableperformance (input)="exitformgetAnswerValues(1016,'1')"></td>
-                            <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" #gaveusableperformance (input)="exitformgetAnswerValues(1016,'2')"></td>
-                            <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" #gaveusableperformance (input)="exitformgetAnswerValues(1016,'3')"></td>
-                            <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" #gaveusableperformance (input)="exitformgetAnswerValues(1016,'4')"></td>
-                            <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" #gaveusableperformance (input)="exitformgetAnswerValues(1016,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Recognized accomplishments </td>
-                            <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" #recognizedaccomplishment (input)="exitformgetAnswerValues(1017,'1')"></td>
-                            <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" #recognizedaccomplishment (input)="exitformgetAnswerValues(1017,'2')"></td>
-                            <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" #recognizedaccomplishment (input)="exitformgetAnswerValues(1017,'3')"></td>
-                            <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" #recognizedaccomplishment (input)="exitformgetAnswerValues(1017,'4')"></td>
-                            <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" #recognizedaccomplishment (input)="exitformgetAnswerValues(1017,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Clearly communicated expectations </td>
-                            <td><input type="radio" id="clearlycommunication" name="clearlycommunication" #clearlycommunication (input)="exitformgetAnswerValues(1018,'1')"></td>
-                            <td><input type="radio" id="clearlycommunication" name="clearlycommunication" #clearlycommunication (input)="exitformgetAnswerValues(1018,'2')"></td>
-                            <td><input type="radio" id="clearlycommunication" name="clearlycommunication" #clearlycommunication (input)="exitformgetAnswerValues(1018,'3')"></td>
-                            <td><input type="radio" id="clearlycommunication" name="clearlycommunication" #clearlycommunication (input)="exitformgetAnswerValues(1018,'4')"></td>
-                            <td><input type="radio" id="clearlycommunication" name="clearlycommunication" #clearlycommunication (input)="exitformgetAnswerValues(1018,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Treated you fairly and respectfully </td>
-                            <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" #treatedyoufairlyrespectfully (input)="exitformgetAnswerValues(1019,'1')"></td>
-                            <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" #treatedyoufairlyrespectfully (input)="exitformgetAnswerValues(1019,'2')"></td>
-                            <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" #treatedyoufairlyrespectfully (input)="exitformgetAnswerValues(1019,'3')"></td>
-                            <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" #treatedyoufairlyrespectfully (input)="exitformgetAnswerValues(1019,'4')"></td>
-                            <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" #treatedyoufairlyrespectfully (input)="exitformgetAnswerValues(1019,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Coached, trained, & developed you </td>
-                            <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" #coachedtraineddeveloped (input)="exitformgetAnswerValues(1020,'1')"></td>
-                            <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" #coachedtraineddeveloped (input)="exitformgetAnswerValues(1020,'2')"></td>
-                            <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" #coachedtraineddeveloped (input)="exitformgetAnswerValues(1020,'3')"></td>
-                            <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" #coachedtraineddeveloped (input)="exitformgetAnswerValues(1020,'4')"></td>
-                            <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" #coachedtraineddeveloped (input)="exitformgetAnswerValues(1020,'5')"></td>
-                        </tr>
-    
-                        <tr>
-                            <td></td>
-                            <td> Provided leadership </td>
-                            <td><input type="radio" id="providedleadership" name="providedleadership" #providedleadership (input)="exitformgetAnswerValues(1021,'1')"></td>
-                            <td><input type="radio" id="providedleadership" name="providedleadership" #providedleadership (input)="exitformgetAnswerValues(1021,'2')"></td>
-                            <td><input type="radio" id="providedleadership" name="providedleadership" #providedleadership (input)="exitformgetAnswerValues(1021,'3')"></td>
-                            <td><input type="radio" id="providedleadership" name="providedleadership" #providedleadership (input)="exitformgetAnswerValues(1021,'4')"></td>
-                            <td><input type="radio" id="providedleadership" name="providedleadership" #providedleadership (input)="exitformgetAnswerValues(1021,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Encouraged teamwork & cooperation </td>
-                            <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" #encouragedteamwork (input)="exitformgetAnswerValues(1022,'1')"></td>
-                            <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" #encouragedteamwork (input)="exitformgetAnswerValues(1022,'2')"></td>
-                            <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" #encouragedteamwork (input)="exitformgetAnswerValues(1022,'3')"></td>
-                            <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" #encouragedteamwork (input)="exitformgetAnswerValues(1022,'4')"></td>
-                            <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" #encouragedteamwork (input)="exitformgetAnswerValues(1022,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Resolved concerns promptly </td>
-                            <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" #resolvedconcernsprompty (input)="exitformgetAnswerValues(1023,'1')"></td>
-                            <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" #resolvedconcernsprompty (input)="exitformgetAnswerValues(1023,'2')"></td>
-                            <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" #resolvedconcernsprompty (input)="exitformgetAnswerValues(1023,'3')"></td>
-                            <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" #resolvedconcernsprompty (input)="exitformgetAnswerValues(1023,'4')"></td>
-                            <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" #resolvedconcernsprompty (input)="exitformgetAnswerValues(1023,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Listened to suggestions & feedback </td>
-                            <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" #listenedtosuggestiond (input)="exitformgetAnswerValues(1024,'1')"></td>
-                            <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" #listenedtosuggestiond (input)="exitformgetAnswerValues(1024,'2')"></td>
-                            <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" #listenedtosuggestiond (input)="exitformgetAnswerValues(1024,'3')"></td>
-                            <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" #listenedtosuggestiond (input)="exitformgetAnswerValues(1024,'4')"></td>
-                            <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" #listenedtosuggestiond (input)="exitformgetAnswerValues(1024,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Kept employees informed </td>
-                            <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" #Keptemployeesinformed (input)="exitformgetAnswerValues(1025,'1')"></td>
-                            <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" #Keptemployeesinformed (input)="exitformgetAnswerValues(1025,'2')"></td>
-                            <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" #Keptemployeesinformed (input)="exitformgetAnswerValues(1025,'3')"></td>
-                            <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" #Keptemployeesinformed (input)="exitformgetAnswerValues(1025,'4')"></td>
-                            <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" #Keptemployeesinformed (input)="exitformgetAnswerValues(1025,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Supported work-life balance </td>
-                            <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" #supportedworklifebalance (input)="exitformgetAnswerValues(1025,'1')"></td>
-                            <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" #supportedworklifebalance (input)="exitformgetAnswerValues(1025,'2')"></td>
-                            <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" #supportedworklifebalance (input)="exitformgetAnswerValues(1025,'3')"></td>
-                            <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" #supportedworklifebalance (input)="exitformgetAnswerValues(1025,'4')"></td>
-                            <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" #supportedworklifebalance (input)="exitformgetAnswerValues(1025,'5')"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Provided appropriate & challenging assignments </td>
-                            <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" #providedappropriatechallenging (input)="exitformgetAnswerValues(1026,'1')"></td>
-                            <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" #providedappropriatechallenging (input)="exitformgetAnswerValues(1026,'2')"></td>
-                            <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" #providedappropriatechallenging (input)="exitformgetAnswerValues(1026,'3')"></td>
-                            <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" #providedappropriatechallenging (input)="exitformgetAnswerValues(1026,'4')"></td>
-                            <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" #providedappropriatechallenging (input)="exitformgetAnswerValues(1026,'5')"></td>
-                        </tr>
-    
-                        <!-- Add more rows as needed -->
-                    </table>
-                </div>
-    
-                    <h6 class="question mt-3">4. Why did you begin looking for a new job?</h6>
-                    <textarea class="mt-3 " name="question4"
-                    style="width: 100%;border:none" #whydidyoubeginlooking (input)="exitformgetAnswerValues(1027,whydidyoubeginlooking.value)"></textarea>
-    
-                    <h6 class="question mt-3">5. What ultimately led you to accept the new position?</h6>
-                    <textarea class="mt-3 " name="areasOfImprovement"
-                    style="width: 100%;border:none" #whatultimatelyledyoutoaccept (input)="exitformgetAnswerValues(1028,whatultimatelyledyoutoaccept.value)"></textarea>
-    
-                    <h6 class="question mt-3">6. How would you describe the culture of our company? Can you provide more
-                        information, such as specific examples?</h6>
-                     <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #howwouldyoudescribetheculture (input)="exitformgetAnswerValues(1029,howwouldyoudescribetheculture.value)"></textarea>
-    
-                    <h6 class="question mt-3">7. What could have been done for you to remain employed here?</h6>
-                     <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #whatcouldhavebeendoneforyou (input)="exitformgetAnswerValues(1030,whatcouldhavebeendoneforyou.value)"></textarea>
-    
-                    <h6 class="question mt-3">8. Did you share your concerns with anyone at the company prior to leaving?
-                    </h6>
-                     <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #didyoushareyourconcernswithanyone (input)="exitformgetAnswerValues(1031,didyoushareyourconcernswithanyone.value)"></textarea>
-    
-                    <h6 class="question mt-3">9. If you could change anything about your job or the company, what would you
-                        change?</h6>
-                        <textarea class="mt-3 " name="areasOfImprovement"
-                        style="width: 100%;border:none" #ifyoucouldchangeanythingabout (input)="exitformgetAnswerValues(1033,ifyoucouldchangeanythingabout.value)"></textarea>
-    
-                    <h6 class="question mt-3">10. Management is often a key factor in an employees decision to leave. Were
-                        you satisfied with the way you were managed?</h6>
-                        <textarea class="mt-3 " name="areasOfImprovement"
-                        style="width: 100%;border:none" #managementisoftenakeyfactorinanemployees (input)="exitformgetAnswerValues(1034,managementisoftenakeyfactorinanemployees.value)"></textarea>
-    
-                    <h6 class="question mt-3">11. Would you consider coming back to work here in the future? In what area or
-                        function? What would need to change?</h6>
-                     <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #wouldyouconsidercomingbacktowork  (input)="exitformgetAnswerValues(1035,wouldyouconsidercomingbacktowork.value)"></textarea>
-    
-                    <h6 class="question mt-3">12. What were the positive aspects about your job, manager, and/or the
-                        organization that caused you to stay</h6>
-                    <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #whatwerethepositiveaspectsabout (input)="exitformgetAnswerValues(1036,whatwerethepositiveaspectsabout.value)"></textarea>
-    
-    
-                    <h6 class="question mt-3">13. What do you consider to be the biggest challenge this organization now
-                        faces and needs to overcome?</h6>
-                    <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #whatdoyouconsi (input)="exitformgetAnswerValues(1037,whatdoyouconsi.value)"></textarea>
-    
-                    <h6 class="question mt-3">14. Do you have any other comments or suggestions?</h6>
-                     <textarea class="mt-3 " name="areasOfImprovement"
-                                    style="width: 100%;border:none" #doyouhaveanyothercommentsor (input)="exitformgetAnswerValues(1034,doyouhaveanyothercommentsor .value)"></textarea>
-    
-    
-                    <div class="dateAndSignature d-flex justify-content-between">
-                        <h6>Date : <input type="date" id="name" name="name" formControlName="formFillDate"></h6>
-                        <h6>Signature : <input type="text" id="name" name="name" formControlName="signature"></h6>
-                    </div>
-    
-                </div>
-            </div>
-        </main>
-        <button type="button" class="primary_btn " (click)="previewfunction()">Submit</button>
-    </form>
-</div>
-<!-- preview Screen -->
-<div *ngIf="preview">
-    <main>
-        <div class="main-wrapper">
-            <div class="wrapper">
-                <div class="logo-img d-flex justify-content-center">
-                    <img id="logo" src="assets/Images/smbxlLogo.svg" alt="smbxl-logo">
-                </div>
-                <h1 class="h1 text-center">Exit Interview</h1>
-                <table>
-                    <tr>
-                        <th>DETAILS</th>
-                        <th>VALUES</th>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td><input type="text" id="name" name="name" value={{this.ExitInterview.value.name}}></td>
-                    </tr>
-                    <tr>
-                        <td>EMPLOYEE CODE</td>
-                        <td><input type="text" id="employee_code" name="employee_code" value={{this.ExitInterview.value.employeeCode}}></td>
-                    </tr>
-                    <tr>
-                        <td>DESIGNATION</td>
-                        <td><input type="text" id="designation" name="designation" value={{this.ExitInterview.value.employeeCode}}></td>
-                    </tr>
-
-                    <tr>
-                        <td>START DATE WITH ORGANIZATION</td>
-                        <td><input type="text" id="start_date" name="start_date" value={{this.ExitInterview.value.startDateWithOrganization}}></td>
-                    </tr>
-                    <tr>
-                        <td>DATE OF RESIGNATION</td>
-                        <td><input type="text" id="resignation_date" name="resignation_date" value={{this.ExitInterview.value.dateOfResignation}}></td>
-                    </tr>
-                    <tr>
-                        <td>SEPARATION DATE</td>
-                        <td><input type="text" id="separation_date" name="separation_date" value={{this.ExitInterview.value.separationDate}}></td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL LENGTH OF SERVICE</td>
-                        <td><input type="text" id="length_of_service" name="length_of_service" value={{this.ExitInterview.value.totalLengthOfService}}></td>
-                    </tr>
-                </table>
-
-                <h6 class="h6 mt-2">Please describe the primary reason(s) you are leaving your current position.</h6>
-
-                <div class="table-responsive">
-                <table class="quit-reasons">
-                    <tr>
-                        <th>1</th>
-                        <th colspan="6">
-                            Please rate the following aspects of the job you are vacating. Use the 1 - 5 scale below.
-                        </th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>1 <br>poor</th>
-                        <th>2 <br>Unsatisfactory</th>
-                        <th>3<br>Average</th>
-                        <th>4<br>very satisfactory</th>
-                        <th>5 <br>Excellent</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Type of work performed</td>
-                        <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" value=1 [(ngModel)]="typeofWorkperformeddata"></td>
-                        <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" value=2 [(ngModel)]="typeofWorkperformeddata"></td>
-                        <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" value=3 [(ngModel)]="typeofWorkperformeddata"></td>
-                        <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" value=4 [(ngModel)]="typeofWorkperformeddata"></td>
-                        <td><input type="radio" id="typeofWorkperformed" name="typeofWorkperformed" value=5 [(ngModel)]="typeofWorkperformeddata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Fairness of workload</td>
-                        <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" value=1 [(ngModel)]="fairnessofworkloaddata"></td>
-                        <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" value=2 [(ngModel)]="fairnessofworkloaddata"></td>
-                        <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" value=3 [(ngModel)]="fairnessofworkloaddata"></td>
-                        <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" value=4 [(ngModel)]="fairnessofworkloaddata"></td>
-                        <td><input type="radio" id="fairnessofworkload" name="fairnessofworkload" value=5 [(ngModel)]="fairnessofworkloaddata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Salary</td>
-                        <td><input type="radio" id="salary" name="salary" value=1 [(ngModel)]="salarydata"></td>
-                        <td><input type="radio" id="salary" name="salary" value=2 [(ngModel)]="salarydata"></td>
-                        <td><input type="radio" id="salary" name="salary" value=3 [(ngModel)]="salarydata"></td>
-                        <td><input type="radio" id="salary" name="salary" value=4 [(ngModel)]="salarydata"></td>
-                        <td><input type="radio" id="salary" name="salary" value=5 [(ngModel)]="salarydata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Working Conditions</td>
-                        <td><input type="radio" id="workingConditions" name="workingConditions" value=1 [(ngModel)]="workingConditionsdata"></td>
-                        <td><input type="radio" id="workingConditions" name="workingConditions" value=2 [(ngModel)]="workingConditionsdata"></td>
-                        <td><input type="radio" id="workingConditions" name="workingConditions" value=3 [(ngModel)]="workingConditionsdata"></td>
-                        <td><input type="radio" id="workingConditions" name="workingConditions" value=4 [(ngModel)]="workingConditionsdata"></td>
-                        <td><input type="radio" id="workingConditions" name="workingConditions" value=5 [(ngModel)]="workingConditionsdata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Tools and equipment provided</td>
-                        <td><input type="radio" id="toolsandequipment" name="toolsandequipment" value=1 [(ngModel)]="toolsandequipmentdata" ></td>
-                        <td><input type="radio" id="toolsandequipment" name="toolsandequipment" value=2 [(ngModel)]="toolsandequipmentdata" ></td>
-                        <td><input type="radio" id="toolsandequipment" name="toolsandequipment" value=3 [(ngModel)]="toolsandequipmentdata" ></td>
-                        <td><input type="radio" id="toolsandequipment" name="toolsandequipment" value=4 [(ngModel)]="toolsandequipmentdata" ></td>
-                        <td><input type="radio" id="toolsandequipment" name="toolsandequipment" value=5 [(ngModel)]="toolsandequipmentdata" ></td>
-            
-
-                    <tr>
-                        <td></td>
-                        <td>Training received</td>
-                        <td><input type="radio" id="trainingrecived" name="trainingrecived" value=1 [(ngModel)]="trainingreciveddata"></td>
-                        <td><input type="radio" id="trainingrecived" name="trainingrecived" value=2 [(ngModel)]="trainingreciveddata"></td>
-                        <td><input type="radio" id="trainingrecived" name="trainingrecived" value=3 [(ngModel)]="trainingreciveddata"></td>
-                        <td><input type="radio" id="trainingrecived" name="trainingrecived" value=4 [(ngModel)]="trainingreciveddata"></td>
-                        <td><input type="radio" id="trainingrecived" name="trainingrecived" value=5 [(ngModel)]="trainingreciveddata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Co-workers</td>
-                        <td><input type="radio" id="coworkers" name="coworkers" value=1 [(ngModel)]="coworkersdata"></td>
-                        <td><input type="radio" id="coworkers" name="coworkers" value=2 [(ngModel)]="coworkersdata"></td>
-                        <td><input type="radio" id="coworkers" name="coworkers" value=3 [(ngModel)]="coworkersdata"></td>
-                        <td><input type="radio" id="coworkers" name="coworkers" value=4 [(ngModel)]="coworkersdata"></td>
-                        <td><input type="radio" id="coworkers" name="coworkers" value=5 [(ngModel)]="coworkersdata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Supervision received </td>
-                        <td><input type="radio" id="supervisionreceived" name="supervisionreceived" value=1 [(ngModel)]="supervisionreceiveddata"></td>
-                        <td><input type="radio" id="supervisionreceived" name="supervisionreceived" value=2 [(ngModel)]="supervisionreceiveddata"></td>
-                        <td><input type="radio" id="supervisionreceived" name="supervisionreceived" value=3 [(ngModel)]="supervisionreceiveddata"></td>
-                        <td><input type="radio" id="supervisionreceived" name="supervisionreceived" value=4 [(ngModel)]="supervisionreceiveddata"></td>
-                        <td><input type="radio" id="supervisionreceived" name="supervisionreceived" value=5 [(ngModel)]="supervisionreceiveddata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Level of input in decisions that affected you </td>
-                        <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" value=1 [(ngModel)]="levelofinputindecisionsdata"></td>
-                        <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" value=2 [(ngModel)]="levelofinputindecisionsdata"></td>
-                        <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" value=3 [(ngModel)]="levelofinputindecisionsdata"></td>
-                        <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" value=4 [(ngModel)]="levelofinputindecisionsdata"></td>
-                        <td><input type="radio" id="levelofinputindecisions" name="levelofinputindecisions" value=5 [(ngModel)]="levelofinputindecisionsdata" ></td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </table>
-                </div>
-                <div class="table-responsive">
-                    <table class="quit-reasons-three">
-                        <tr>
-                            <th>2.</th>
-                            <th colspan="6">
-                                Did dissatisfaction with any of the following factors influence your decision to leave?
-                            </th>
-                        </tr>
-                        <tr> 
-                            <th></th>
-                            <th></th>
-                            <th>YES</th>
-                            <th>NO</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Type of work</td>
-                            <td><input type="radio" id="typeofwork" name="typeofwork" value=1 [(ngModel)]="typeofworkdata"></td>
-                            <td><input type="radio" id="typeofwork" name="typeofwork" value=2 [(ngModel)]="typeofworkdata"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Working conditions (setting, schedule, flexibility) </td>
-                            <td><input type="radio" id="workingconditions" name="workingconditions" value=1 [(ngModel)]="workingconditionsdata"></td>
-                            <td><input type="radio" id="workingconditions" name="workingconditions" value=2 [(ngModel)]="workingconditionsdata"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Pay </td>
-                            <td><input type="radio" id="pay" name="pay" value=1 [(ngModel)]="paydata"></td>
-                            <td><input type="radio" id="pay" name="pay" value=2 [(ngModel)]="paydata"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Managemen </td>
-                            <td><input type="radio" id="managemen" name="managemen" value=1 [(ngModel)]="managemendata"></td>
-                            <td><input type="radio" id="managemen" name="managemen" value=2 [(ngModel)]="managemendata"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Location </td>
-                            <td><input type="radio" id="location" name="location" value=1 [(ngModel)]="locationdata"></td>
-                            <td><input type="radio" id="location" name="location" value=2 [(ngModel)]="locationdata"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Commute </td>
-                            <td><input type="radio" id="commute" name="commute" value=1 [(ngModel)]="commutedata"></td>
-                            <td><input type="radio" id="commute" name="commute" value=2 [(ngModel)]="commutedata"></td>
-                        </tr>
-    
-                        <!-- Add more rows as needed -->
-                    </table>
-                </div>
-<div class="table-responsive">
-                <table class="quit-reasons-three">
-                    <tr>
-                        <th>3.</th>
-                        <th colspan="6">
-                            Please rate your supervisor on the following factors. Use the 1 – 5 scale below.
-                        </th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>1 <br>Never</th>
-                        <th>2<br>Seldom</th>
-                        <th>3<br> Often</th>
-                        <th> 4<br>Usually</th>
-                        <th>5 <br>Always</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Gave usable performance feedback </td>
-                        <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" value=1 [(ngModel)]="gaveusableperformancedata"></td>
-                        <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" value=2 [(ngModel)]="gaveusableperformancedata"></td>
-                        <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" value=3 [(ngModel)]="gaveusableperformancedata"></td>
-                        <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" value=4 [(ngModel)]="gaveusableperformancedata"></td>
-                        <td><input type="radio" id="gaveusableperformance" name="gaveusableperformance" value=5 [(ngModel)]="gaveusableperformancedata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Recognized accomplishments </td>
-                        <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" value=1 [(ngModel)]="recognizedaccomplishmentdata"></td>
-                        <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" value=2 [(ngModel)]="recognizedaccomplishmentdata"></td>
-                        <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" value=3 [(ngModel)]="recognizedaccomplishmentdata"></td>
-                        <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" value=4 [(ngModel)]="recognizedaccomplishmentdata"></td>
-                        <td><input type="radio" id="recognizedaccomplishment" name="recognizedaccomplishment" value=5 [(ngModel)]="recognizedaccomplishmentdata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Clearly communicated expectations </td>
-                        <td><input type="radio" id="clearlycommunication" name="clearlycommunication" value=1 [(ngModel)]="clearlycommunicationdata"></td>
-                        <td><input type="radio" id="clearlycommunication" name="clearlycommunication" value=2 [(ngModel)]="clearlycommunicationdata"></td>
-                        <td><input type="radio" id="clearlycommunication" name="clearlycommunication" value=3 [(ngModel)]="clearlycommunicationdata"></td>
-                        <td><input type="radio" id="clearlycommunication" name="clearlycommunication" value=4 [(ngModel)]="clearlycommunicationdata"></td>
-                        <td><input type="radio" id="clearlycommunication" name="clearlycommunication" value=5 [(ngModel)]="clearlycommunicationdata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Treated you fairly and respectfully </td>
-                        <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" value=1 [(ngModel)]="treatedyoufairlyrespectfullydata"></td>
-                        <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" value=2 [(ngModel)]="treatedyoufairlyrespectfullydata"></td>
-                        <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" value=3 [(ngModel)]="treatedyoufairlyrespectfullydata"></td>
-                        <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" value=4 [(ngModel)]="treatedyoufairlyrespectfullydata"></td>
-                        <td><input type="radio" id="treatedyoufairlyrespectfully" name="treatedyoufairlyrespectfully" value=5 [(ngModel)]="treatedyoufairlyrespectfullydata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Coached, trained, & developed you </td>
-                        <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" value=1 [(ngModel)]="coachedtraineddevelopeddata"></td>
-                        <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" value=2 [(ngModel)]="coachedtraineddevelopeddata"></td>
-                        <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" value=3 [(ngModel)]="coachedtraineddevelopeddata"></td>
-                        <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" value=4 [(ngModel)]="coachedtraineddevelopeddata"></td>
-                        <td><input type="radio" id="coachedtraineddeveloped" name="coachedtraineddeveloped" value=5 [(ngModel)]="coachedtraineddevelopeddata"></td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
-                        <td> Provided leadership </td>
-                        <td><input type="radio" id="providedleadership" name="providedleadership" value=1 [(ngModel)]="providedleadershipdata"></td>
-                        <td><input type="radio" id="providedleadership" name="providedleadership" value=2 [(ngModel)]="providedleadershipdata"></td>
-                        <td><input type="radio" id="providedleadership" name="providedleadership" value=3 [(ngModel)]="providedleadershipdata"></td>
-                        <td><input type="radio" id="providedleadership" name="providedleadership" value=4 [(ngModel)]="providedleadershipdata"></td>
-                        <td><input type="radio" id="providedleadership" name="providedleadership" value=5 [(ngModel)]="providedleadershipdata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Encouraged teamwork & cooperation </td>
-                        <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" value=1 [(ngModel)]="encouragedteamworkdata"></td>
-                        <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" value=2 [(ngModel)]="encouragedteamworkdata"></td>
-                        <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" value=3 [(ngModel)]="encouragedteamworkdata"></td>
-                        <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" value=4 [(ngModel)]="encouragedteamworkdata"></td>
-                        <td><input type="radio" id="encouragedteamwork" name="encouragedteamwork" value=5 [(ngModel)]="encouragedteamworkdata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Resolved concerns promptly </td>
-                        <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" value=1 [(ngModel)]="resolvedconcernspromptydata"></td>
-                        <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" value=2 [(ngModel)]="resolvedconcernspromptydata"></td>
-                        <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" value=3 [(ngModel)]="resolvedconcernspromptydata"></td>
-                        <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" value=4 [(ngModel)]="resolvedconcernspromptydata"></td>
-                        <td><input type="radio" id="resolvedconcernsprompty" name="resolvedconcernsprompty" value=5 [(ngModel)]="resolvedconcernspromptydata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Listened to suggestions & feedback </td>
-                        <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" value=1 [(ngModel)]="listenedtosuggestionddata"></td>
-                        <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" value=2 [(ngModel)]="listenedtosuggestionddata"></td>
-                        <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" value=3 [(ngModel)]="listenedtosuggestionddata"></td>
-                        <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" value=4 [(ngModel)]="listenedtosuggestionddata"></td>
-                        <td><input type="radio" id="listenedtosuggestiond" name="listenedtosuggestiond" value=5 [(ngModel)]="listenedtosuggestionddata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Kept employees informed </td>
-                        <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" value=1 [(ngModel)]="Keptemployeesinformeddata"></td>
-                        <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" value=2 [(ngModel)]="Keptemployeesinformeddata"></td>
-                        <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" value=3 [(ngModel)]="Keptemployeesinformeddata"></td>
-                        <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" value=4 [(ngModel)]="Keptemployeesinformeddata"></td>
-                        <td><input type="radio" id="Keptemployeesinformed" name="Keptemployeesinformed" value=5 [(ngModel)]="Keptemployeesinformeddata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Supported work-life balance </td>
-                        <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" value=1 [(ngModel)]="supportedworklifebalancedata"></td>
-                        <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" value=2 [(ngModel)]="supportedworklifebalancedata"></td>
-                        <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" value=3 [(ngModel)]="supportedworklifebalancedata"></td>
-                        <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" value=4 [(ngModel)]="supportedworklifebalancedata"></td>
-                        <td><input type="radio" id="supportedworklifebalance" name="supportedworklifebalance" value=5 [(ngModel)]="supportedworklifebalancedata"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> Provided appropriate & challenging assignments </td>
-                        <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" value=1 [(ngModel)]="providedappropriatechallengingdata"></td>
-                        <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" value=2 [(ngModel)]="providedappropriatechallengingdata"></td>
-                        <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" value=3 [(ngModel)]="providedappropriatechallengingdata"></td>
-                        <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" value=4 [(ngModel)]="providedappropriatechallengingdata"></td>
-                        <td><input type="radio" id="providedappropriatechallenging" name="providedappropriatechallenging" value=5 [(ngModel)]="providedappropriatechallengingdata"></td>
-                    </tr>
-
-                    <!-- Add more rows as needed -->
-                </table>
-            </div>
-
-                <h6 class="question mt-3">4. Why did you begin looking for a new job?</h6>
-                <textarea class="mt-3 " name="question4"
-                style="width: 100%;border:none"  [value]="getanswerpreview(1027)"></textarea>
-
-                <h6 class="question mt-3">5. What ultimately led you to accept the new position?</h6>
-                <textarea class="mt-3 " name="areasOfImprovement"
-                style="width: 100%;border:none" [value]="getanswerpreview(1028)"></textarea>
-
-                <h6 class="question mt-3">6. How would you describe the culture of our company? Can you provide more
-                    information, such as specific examples?</h6>
-                 <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none"  [value]="getanswerpreview(1029)"></textarea>
-
-                <h6 class="question mt-3">7. What could have been done for you to remain employed here?</h6>
-                 <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none" [value]="getanswerpreview(1030)"></textarea>
-
-                <h6 class="question mt-3">8. Did you share your concerns with anyone at the company prior to leaving?
-                </h6>
-                 <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none"  [value]="getanswerpreview(1031)"></textarea>
-
-                <h6 class="question mt-3">9. If you could change anything about your job or the company, what would you
-                    change?</h6>
-                    <textarea class="mt-3 " name="areasOfImprovement"
-                    style="width: 100%;border:none"  [value]="getanswerpreview(1033)"></textarea>
-
-                <h6 class="question mt-3">10. Management is often a key factor in an employees decision to leave. Were
-                    you satisfied with the way you were managed?</h6>
-                    <textarea class="mt-3 " name="areasOfImprovement"
-                    style="width: 100%;border:none"  [value]="getanswerpreview(1034)"></textarea>
-
-                <h6 class="question mt-3">11. Would you consider coming back to work here in the future? In what area or
-                    function? What would need to change?</h6>
-                 <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none"  [value]="getanswerpreview(1035)"></textarea>
-
-                <h6 class="question mt-3">12. What were the positive aspects about your job, manager, and/or the
-                    organization that caused you to stay</h6>
-                <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none" [value]="getanswerpreview(1036)"></textarea>
-
-
-                <h6 class="question mt-3">13. What do you consider to be the biggest challenge this organization now
-                    faces and needs to overcome?</h6>
-                <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none"  [value]="getanswerpreview(1037)"></textarea>
-
-                <h6 class="question mt-3">14. Do you have any other comments or suggestions?</h6>
-                 <textarea class="mt-3 " name="areasOfImprovement"
-                                style="width: 100%;border:none"  [value]="getanswerpreview(1038)"></textarea>
-
-
-                <div class="dateAndSignature d-flex justify-content-between">
-                    <h6>Date : <input type="date" id="name" name="name" value={{this.ExitInterview.value.formFillDate}}></h6>
-                    <h6>Signature : <input type="text" id="name" name="name" value={{this.ExitInterview.value.signature}}></h6>
-                </div>
-
-            </div>
+<body>
+    <header class="header">
+        <h1 class="title">Candidate Information</h1>
+    </header>
+    <!-- <div class="step-progress">
+        <div class="circle-container">
+          <div class="circle" *ngFor="let circle of circles; let i = index" [class.active]="i < currentStep"></div>
         </div>
-    </main>
-</div>
+        <div class="progress-container">
+          <div class="indicator" [style.width.%]="progressWidth"></div>
+        </div>
+        <div class="button-container">
+           <button id="prev" (click)="updateSteps('prev')" [disabled]="currentStep === 1">Previous</button>
+          <button id="next" (click)="updateSteps('next')" [disabled]="currentStep === circles.length">Next</button> 
+        </div>
+      </div> -->
 
-
-    <script>
-        // Get the input field element
-        var inputField = document.getElementById("quest4");
-
-        // Add event listener for input event
-        inputField.addEventListener("input", function () {
-            // Adjust the width of the input field dynamically based on its content length
-            this.style.width = (this.value.length + 1) + "ch"; // Set width based on content length
-        });
-    </script>
-    <script>
-        // Set the src attribute of the img element using JavaScript
-        document.getElementById("logo").src = logoSrc;
-    </script>
+    <div class="mainTable">
+        <div class="step-progress">
+            <div class="circle-container">
+              <ng-container *ngFor="let circle of circles; let i = index">
+                <div class="circle" [class.active]="i < currentStep">{{ i + 1 }}</div>
+                <!-- Add progress segment between circles -->
+                <div *ngIf="i < circles.length - 1" class="progress-segment" [class.filled]="i < currentStep - 1"></div>
+              </ng-container>
+            </div>
+            <div class="button-container">
+              <!-- <button id="prev" (click)="updateSteps('prev')" [disabled]="currentStep === 1">Previous</button>
+              <button id="next" (click)="updateSteps('next')" [disabled]="currentStep === circles.length">Next</button> -->
+            </div>
+          </div>
+       <div *ngIf="currentStep === 1">
+        <h3>
+            Personal Details:
+          </h3>
+    <table>
+        <tr>
+            <td>
+                <p>Name:</p>
+                <input type="text" placeholder="Full Name" formControlName="name">
+            </td>
+            <td>
+                <p>Designation</p>
+                <input type="text" placeholder="Specify Position" formControlName="designation" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Start Date With Organisation</p>
+                <input type="date" placeholder="References" formControlName="startDateWithOrganization">
+            </td>
+            <td>
+                <p>Date of Resignation</p>
+                <input type="date" formControlName="dateOfResignation">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Separation Date</p>
+                <input type="text" formControlName="separationDate">
+            </td>
+            <td>
+                <p>Total length of service</p>
+                <input type="text" placeholder="Email Id" formControlName="totalLengthOfService">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Marital Status:</p>
+                <input type="text" placeholder="Marital Status">
+            </td>
+        </tr>
+    </table>
+       </div>
+       <div *ngIf="currentStep === 2">
+        <h3>Please describe the primary reason(s) you are leaving your current position.</h3>
+        <div class="question-container">
+            <p class="question">1Q.Type of work performed?</p>
+            <div class="radio-buttons">
+                <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+            </div>
+            <p class="question">2Q.Fairness of workload?</p>
+            <div class="radio-buttons">
+                <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+            </div>
+            <p class="question">3Q.Salary?</p>
+            <div class="radio-buttons">
+                <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+            </div>
+            <p class="question">4Q.Working condition?</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                    <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                    <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+                </div>
+                <p class="question">5Q.Tools and equipment provided?</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                    <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                    <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+                </div>
+                <p class="question">6Q.Training received?</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                    <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                    <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+                </div>
+                <p class="question">7Q.Supervision received?</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                    <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                    <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+                </div>
+                <p class="question">8Q.Level of input in decisions that affected you?</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1"> 1<br>Poor</label>
+                    <label><input type="radio" name="satisfaction" value="2"> 2<br>Unsatisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="3"> 3<br>Average</label>
+                    <label><input type="radio" name="satisfaction" value="4"> 4<br>Very satisfactory</label>
+                    <label><input type="radio" name="satisfaction" value="5"> 5<br>Excellent</label>
+                </div>
+        </div>
+       </div>
+       <div *ngIf="currentStep === 3">
+        <h3>Did dissatisfaction with any of the following factors influence your decision to leave?</h3>
+        <div class="question-container">
+            <p class="question">1Q.Type of work</p>
+            <div class="radio-buttons">
+                <label><input type="radio" name="satisfaction" value="1">Yes</label>
+                <label><input type="radio" name="satisfaction" value="2">No</label>
+            </div>
+            <p class="question">2Q.Working conditions (setting, schedule, flexibility)</p>
+            <div class="radio-buttons">
+                <label><input type="radio" name="satisfaction" value="1">Yes</label>
+                <label><input type="radio" name="satisfaction" value="2">No</label>
+            </div>
+            <p class="question">3Q.Pay</p>
+            <div class="radio-buttons">
+                <label><input type="radio" name="satisfaction" value="1">Yes</label>
+                <label><input type="radio" name="satisfaction" value="2">No</label>
+            </div>
+            <p class="question">4Q.Management</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1">Yes</label>
+                    <label><input type="radio" name="satisfaction" value="2">No</label>
+                </div>
+                <p class="question">5Q.Location</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1">Yes</label>
+                    <label><input type="radio" name="satisfaction" value="2">No</label>
+                </div>
+                <p class="question">6Q.Commute</p>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="satisfaction" value="1">Yes</label>
+                    <label><input type="radio" name="satisfaction" value="2">No</label>
+                </div>
+        </div>
+       </div>
+        <div class="nextButton">
+            <button type="button" class="buttondata" (click)="updateSteps('prev')" [disabled]="currentStep === 1">Previous</button>
+            <button type="button" class="buttondata" (click)="updateSteps('next')" [disabled]="currentStep === circles.length">Next</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>© 2024 Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
